@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 83.1068,
+        "lat": 54.758
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 294.84,
+        "feels_like": 294.66,
+        "temp_min": 294.84,
+        "temp_max": 294.84,
+        "pressure": 1002,
+        "humidity": 61,
+        "sea_level": 1002,
+        "grnd_level": 987
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4.6,
+        "deg": 152,
+        "gust": 5.92
+    },
+    "clouds": {
+        "all": 83
+    },
+    "dt": 1755412238,
+    "sys": {
+        "country": "RU",
+        "sunrise": 1755385587,
+        "sunset": 1755439032
+    },
+    "timezone": 25200,
+    "id": 1510350,
+    "name": "Berdsk",
+    "cod": 200
+}
