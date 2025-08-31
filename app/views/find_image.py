@@ -58,7 +58,7 @@ async def add_name_find_image(message: Message, state: FSMContext):
     ввести количество изображений для поиска."""
     await state.update_data(name=message.text)
 
-    await message.answer("Введите количество изображений которые хотите найти")
+    await message.answer("Введите необходимое количество изображений для скачивания")
     await state.set_state(FindImage.count)
 
 
@@ -69,7 +69,7 @@ async def finsh_find_image(message: Message, state: FSMContext):
     if not number:
         await message.answer(
             text=f"{mess['err']}\n\n"
-            "Введите снова количество изображений которые хотите найти"
+            "Введите снова необходимое количество изображений для скачиванияи"
         )
     else:
         await message.answer(text="Идет Поиск")
@@ -103,7 +103,7 @@ async def finsh_find_image(message: Message, state: FSMContext):
             await bot.send_document(
                 chat_id=message.chat.id,
                 document=FSInputFile(path=path),
-                caption="Вот ваша скаченные изображения",
+                caption="Скаченные изображения",
             )
 
             delete_images_and_archive(

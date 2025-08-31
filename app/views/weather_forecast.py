@@ -176,15 +176,22 @@ async def get_worlwipe_weather_maps(call: CallbackQuery):
     # Получает карту погоды
     path = get_and_save_image(url=url, filename="weather.png")
 
-    await bot.send_photo(
-        chat_id=call.message.chat.id,
-        caption="Карта погоды",
-        photo=FSInputFile(path=path),
-        reply_markup=get_button_is_weathre_forecast(),
-    )
+    if path:
+        await bot.send_photo(
+            chat_id=call.message.chat.id,
+            caption="Карта погоды",
+            photo=FSInputFile(path=path),
+            reply_markup=get_button_is_weathre_forecast(),
+        )
 
-    # Удаляет карты погоду
-    os.remove(path)
+        # Удаляет карты погоду
+        os.remove(path)
+    else:
+        await bot.send_message(
+            chat_id=call.mmessage.chat.id,
+            text="Произошла ошибка.Попробуйте сделать запрос позднее",
+        )
+        await handler_weather_maps(call=call)
 
 
 # логика для определения уровня загрязнения воздуха
@@ -210,7 +217,7 @@ async def air_pollution(call: CallbackQuery, state: FSMContext):
 async def cancel_air_polution_handler(message: Message, state: FSMContext):
     """Работа с AirPollution.Отменяет выдачу уровня загрзнения воздуха по городу."""
 
-    current_state = state.get_state()
+    current_state = await state.get_state()
     if current_state is None:
         return
 

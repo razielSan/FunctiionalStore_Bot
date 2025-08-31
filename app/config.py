@@ -1,22 +1,57 @@
 from typing import List, Dict
 
+from typing import Optional
+
 from pydantic_settings import SettingsConfigDict, BaseSettings
 from aiogram.types import BotCommand
 from pydantic import BaseModel
 
 
 class PollinationsImageGeneration(BaseModel):
-    IMAGE_GENERATE: str = "https://image.pollinations.ai/prompt/{}"
+    """Модель сайта https://pollinations.ai/."""
 
+    IMAGE_GENERATE: str = (
+        "https://image.pollinations.ai/prompt/{}"  # URL для генерации изображений
+    )
+
+
+class ImaggaImageDescription(BaseModel):
+    """Модель сайта https://imagga.com/."""
+
+    AUTHORIZATION: Optional[str] = None  # Токен аторизации
+    UPLOADEN_ENDPOINT: str = "https://api.imagga.com/v2/uploads"  # URL для получения uplooad_image_id картинки
+    URL_TAGS: str = "https://api.imagga.com/v2/tags?"  # URL для описание изображения
+
+
+class YoutubeAPI(BaseModel):
+    YoutubeApiKey: Optional[str] = None
+    VIDEO_URL: str = "https://www.youtube.com/watch?v={}"
+    CHANNEL_URL: str ="https://www.youtube.com/channel/{}"
 
 class ImageGeneration(BaseModel):
+    """Модели для генерации изображений по описанию."""
+
     pollinations: PollinationsImageGeneration = PollinationsImageGeneration()
+
+
+class ImageDescription(BaseModel):
+    """Модели для описания изображений."""
+
+    immaga: ImaggaImageDescription = ImaggaImageDescription()
+
+
+class FindVideo(BaseModel):
+    """Источники поиска видео."""
+    youtube: YoutubeAPI = YoutubeAPI()
 
 
 class Settings(BaseSettings):
     """Настройки бота."""
 
-    model_config = SettingsConfigDict(env_file=".env")
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_nested_delimiter="__",
+    )
 
     API_OPENWEATHERMAP: str  # API для сайта https://api.openweathermap.org
     TOKEN: str
@@ -25,7 +60,7 @@ class Settings(BaseSettings):
             command="/start",
             description="Вызов меню бота",
         )
-    ]
+    ]  # Список коммнад для бота
     ULR_GEOLOCATED_OPENWEATHERMAP: str = "http://api.openweathermap.org/geo/1.0/direct?q={}&limit=5&appid={}"  # URL для получения геолокации
     URL_CURRENT_OPENWEATHERMAP: str = "https://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={}"  # URL для текущего прогноза погоды
     URL_FEATURE_OPENWEATHERMAP: str = "https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}"  # URL для текущего прогноза погоды на 5 дней
@@ -153,9 +188,8 @@ class Settings(BaseSettings):
         5: "Очень плохой",
     }  # Словарь индексов качества воздуха
 
-    PATH_FIND_IMAGE: str = "static/img/find_image/"
-
     modelimage: ImageGeneration = ImageGeneration()
-
+    image_description: ImageDescription = ImageDescription()
+    find_video: FindVideo = FindVideo()
 
 settings = Settings()

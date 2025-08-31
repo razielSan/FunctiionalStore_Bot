@@ -45,7 +45,7 @@ async def start_generate_image_pollinations(call: CallbackQuery, state: FSMConte
 async def cancel_generate_image_pollinations(message: Message, state: FSMContext):
     """Работа с FSM GenerateImagePollinations. Отменяет все действия."""
 
-    current_state = state.get_state()
+    current_state = await state.get_state()
 
     if current_state is None:
         return

@@ -11,9 +11,11 @@ def get_start_button_bot():
             ],
             [
                 KeyboardButton(text="Поиск Изображений"),
+                KeyboardButton(text="Поиск Видео"),
             ],
             [
                 KeyboardButton(text="Генерация Изображений"),
+                KeyboardButton(text="Описание Изображений"),
             ],
         ],
         resize_keyboard=True,

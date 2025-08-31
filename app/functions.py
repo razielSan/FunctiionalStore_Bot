@@ -2,9 +2,11 @@ from typing import Dict
 import os
 import sys
 import json
+from pathlib import Path
 
 import requests
 from icrawler.builtin import BingImageCrawler
+from googleapiclient.discovery import build
 
 from config import settings
 
@@ -224,3 +226,106 @@ def get_air_pollution_city(city: str):
     except Exception as err:
         print(err)
         return None, {"error": "Города с таким названием не существует"}
+
+
+def get_image_description_by_immaga(
+    language="en",
+    limit=-1,
+):
+    """Возвращает описание картинки для сайта https://imagga.com/.
+
+    Args:
+        language (str, optional): Язык описания изображений.По умолчанию английский
+        limit (int, optional): Количество описаний.По умолчанию максимальное
+
+    Returns:
+        _type_: Кортеж содержащий описание картинки и сообщение об ошибке, если имеется
+        (<image_description>, {"err": None}) - Если запрос прошел успешно
+        (None, {"err": <message_error>}) - Если произошла ошибка
+    """
+    try:
+        path_image = Path(__file__).parent
+
+        full_path = os.path.join(path_image, "immaga.jpg")
+
+        response = requests.post(
+            settings.image_description.immaga.UPLOADEN_ENDPOINT,
+            headers={
+                "Authorization": f"Basic {settings.image_description.immaga.AUTHORIZATION}",
+            },
+            files={"image": open(full_path, "rb")},
+        )
+
+        uload_id = response.json()["result"]["upload_id"]
+
+        response_imaage_description = requests.get(
+            f"{settings.image_description.immaga.URL_TAGS}image_upload_id="
+            f"{uload_id}&language={language}&limit={limit}",
+            headers={
+                "Authorization": f"Basic {settings.image_description.immaga.AUTHORIZATION}",
+            },
+        ).json()
+
+        array_image_description = [
+            "Список возможных вариантов изображения на картинке:\n"
+        ]
+
+        for data in response_imaage_description["result"]["tags"]:
+            array_image_description.append(
+                f"{data['tag']['ru'].title()} ({data['confidence']:.3f}%) "
+            )
+
+        result = "\n".join(array_image_description)
+        return result, {"err": None}
+
+    except Exception as err:
+        return None, {"err": err}
+
+
+def get_description_video_by_youtube(
+    name_video: str,
+    sort: str,
+):
+    service = build(
+        "youtube", "v3", developerKey=settings.find_video.youtube.YoutubeApiKey
+    )
+
+    response = (
+        service.search()
+        .list(
+            q=name_video,
+            part="snippet",
+            relevanceLanguage="ru",
+            type="video",
+            maxResults=50,
+            order=sort,
+        )
+        .execute()
+    )
+
+    array_video_description = []
+    order = 0
+    for result in response["items"]:
+        order += 1
+        video_url = None
+        channel_url = None
+        try:
+            video_id = result["id"]["videoId"]
+            video_url = settings.find_video.youtube.VIDEO_URL.format(video_id)
+        except Exception:
+            channel_id = result["id"]["channelId"]
+            channel_url = settings.find_video.youtube.CHANNEL_URL.format(channel_id)
+
+        title = result["snippet"]["title"].replace("&quot;", " ")
+        description = result["snippet"]["description"].replace("&quot;", " ")
+
+        if video_url:
+            array_video_description.append(
+                f"{order}. {title}\n\n{description}\n\nСсслыка на видео\n{video_url}\n"
+            )
+        else:
+            array_video_description.append(
+                f"{order}. {title}\n\n{description}\n\nСсслыка на канал\n{channel_url}\n"
+            )
+
+    return array_video_description
