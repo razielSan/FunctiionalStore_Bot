@@ -5,6 +5,7 @@ from aiogram.types import Message, CallbackQuery, FSInputFile
 from aiogram.types.reply_keyboard_remove import ReplyKeyboardRemove
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
+from aiogram.filters import StateFilter
 
 from keyboards.inline_kb import (
     get_button_is_weathre_forecast,
@@ -22,7 +23,7 @@ from config import settings
 router = Router(name=__name__)
 
 
-@router.message(F.text == "Прогноз Погоды")
+@router.message(StateFilter(None), F.text == "Прогноз Погоды")
 async def get_weather_forecast(message: Message):
     """Возвращает кнопки для выбора вариантов прогноза погоды."""
 
@@ -103,6 +104,7 @@ async def finish_current_weaher(message: Message, state: FSMContext):
 class FeautureWeather(StatesGroup):
     """FSM для прогноза погоды на 5 дней"""
 
+    count = State()
     feautre_weather = State()
 
 
@@ -114,6 +116,8 @@ async def start_feature_weather(call: CallbackQuery, state: FSMContext):
         "Введите название города для которого хотите узнать прогноз погоды",
         reply_markup=get_cancel_button(),
     )
+    await state.set_state(FeautureWeather.count)
+    await state.update_data(count=0)
     await state.set_state(FeautureWeather.feautre_weather)
 
 
@@ -140,19 +144,33 @@ async def finish_feature_weather(message: Message, state: FSMContext):
     data, mess = get_data_current_weather_forecast_with_openweathermap(
         city=message.text, five_days=True
     )
+    weather = await state.get_data()
+    count = weather["count"]
 
-    if data:
-        await state.clear()
-        await message.answer(data)
-        await message.answer(
-            text="Главное меню бота",
-            reply_markup=get_start_button_bot(),
-        )
+    # Защита от спама когда пользователь делает много запросов
+    if count == 1:
+        return
     else:
-        await message.answer(
-            "Такого города не существует\n\n"
-            "Введите снова название города для которого хотите узнать прогноз погоды"
-        )
+        await state.set_state(FeautureWeather.count)
+        await state.update_data(count=1)
+        await state.set_state(FeautureWeather.feautre_weather)
+
+        if data:
+            await state.clear()
+            await message.answer(data)
+            await message.answer(
+                text="Главное меню бота",
+                reply_markup=get_start_button_bot(),
+            )
+        else:
+            await state.set_state(FeautureWeather.count)
+            await state.update_data(count=0)
+            await state.set_state(FeautureWeather.feautre_weather)
+
+            await message.answer(
+                "Такого города не существует\n\n"
+                "Введите снова название города для которого хотите узнать прогноз погоды"
+            )
 
 
 # Работа с картами погоды
@@ -172,20 +190,22 @@ async def get_worlwipe_weather_maps(call: CallbackQuery):
     _, weather = call.data.split(" ")
 
     url = settings.URL_WEATHER_MAPS.format(weather, settings.API_OPENWEATHERMAP)
-
     # Получает карту погоды
     path = get_and_save_image(url=url, filename="weather.png")
 
     if path:
-        await bot.send_photo(
-            chat_id=call.message.chat.id,
-            caption="Карта погоды",
-            photo=FSInputFile(path=path),
-            reply_markup=get_button_is_weathre_forecast(),
-        )
+        try:
+            await bot.send_photo(
+                chat_id=call.message.chat.id,
+                caption="Карта погоды",
+                photo=FSInputFile(path=path),
+                reply_markup=get_button_is_weathre_forecast(),
+            )
 
-        # Удаляет карты погоду
-        os.remove(path)
+            # Удаляет карты погоду
+            os.remove(path)
+        except Exception:
+            print(path)
     else:
         await bot.send_message(
             chat_id=call.mmessage.chat.id,

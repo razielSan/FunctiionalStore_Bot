@@ -1,0 +1,12 @@
+{
+    "created": 1756799794,
+    "data": [
+        {
+            "revised_prompt": "An adorable baby sea otter, showcasing its petite body covered in a fuzzy brown fur. Details should depict the sea otter floating on its back on the gentle ocean waves, with its tiny paws raised in play. Its gleeful expressions and engaging actions should capture the creature's playful and endearing nature.",
+            "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-fksooPluLmZdYtVP26ebkZpV/user-ZCiVnTG1lFiYwGAR26dUH0Ld/img-GdyuWVmXnNGfslcXbkR171bV.png?st=2025-09-02T06%3A56%3A34Z&se=2025-09-02T08%3A56%3A34Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=b1a0ae1f-618f-4548-84fd-8b16cacd5485&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-01T21%3A12%3A48Z&ske=2025-09-02T21%3A12%3A48Z&sks=b&skv=2024-08-04&sig=Y6YpFxqO5yn3fCPw58fvKn8QduGyitwtzLeXAyWuAMk%3D"
+        }
+    ],
+    "id": "2b7fc4d3-70e6-402f-a319-0a2092c76b17",
+    "object": "chat.completion",
+    "model": "just-ai/openai-proxy/dall-e-3"
+}

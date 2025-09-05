@@ -15,6 +15,13 @@ class PollinationsImageGeneration(BaseModel):
     )
 
 
+class CailaIoImageGeneration(BaseModel):
+    """Модель сайта https://caila.io/."""
+
+    ApiKey: Optional[str] = None
+    URL_IMAGE_GENERATE: str = "https://caila.io/api/adapters/openai/images/generations"
+
+
 class ImaggaImageDescription(BaseModel):
     """Модель сайта https://imagga.com/."""
 
@@ -26,12 +33,14 @@ class ImaggaImageDescription(BaseModel):
 class YoutubeAPI(BaseModel):
     YoutubeApiKey: Optional[str] = None
     VIDEO_URL: str = "https://www.youtube.com/watch?v={}"
-    CHANNEL_URL: str ="https://www.youtube.com/channel/{}"
+    CHANNEL_URL: str = "https://www.youtube.com/channel/{}"
+
 
 class ImageGeneration(BaseModel):
     """Модели для генерации изображений по описанию."""
 
     pollinations: PollinationsImageGeneration = PollinationsImageGeneration()
+    caila: CailaIoImageGeneration = CailaIoImageGeneration()
 
 
 class ImageDescription(BaseModel):
@@ -42,6 +51,7 @@ class ImageDescription(BaseModel):
 
 class FindVideo(BaseModel):
     """Источники поиска видео."""
+
     youtube: YoutubeAPI = YoutubeAPI()
 
 
@@ -191,5 +201,6 @@ class Settings(BaseSettings):
     modelimage: ImageGeneration = ImageGeneration()
     image_description: ImageDescription = ImageDescription()
     find_video: FindVideo = FindVideo()
+
 
 settings = Settings()

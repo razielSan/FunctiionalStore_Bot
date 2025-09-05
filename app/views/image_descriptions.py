@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 from aiogram import Router, F
+from aiogram.filters import StateFilter
 from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove, ContentType
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
@@ -15,7 +16,7 @@ from extension import bot
 router = Router(name=__name__)
 
 
-@router.message(F.text == "Описание Изображений")
+@router.message(StateFilter(None), F.text == "Описание Изображений")
 async def image_description(message: Message):
     await message.answer(
         text="Достуные варианты",
@@ -27,6 +28,7 @@ async def image_description(message: Message):
 class ImageDescription(StatesGroup):
     """FSM для описание изображений"""
 
+    spam_count = State()
     image_name = State()
 
 
@@ -38,6 +40,9 @@ async def start_image_description_imagga(call: CallbackQuery, state: FSMContext)
         text="Скидывайте фотографию для анализа изображения",
         reply_markup=get_cancel_button(),
     )
+
+    await state.set_state(ImageDescription.spam_count)
+    await state.update_data(spam_count=0)
     await state.set_state(ImageDescription.image_name)
 
 
@@ -50,36 +55,59 @@ async def cancel_image_description_imagg(message: Message, state: FSMContext):
     if current_state is None:
         return
 
+    await state.clear()
     await message.answer(
         "Описание изображений отменено",
         reply_markup=ReplyKeyboardRemove(),
     )
 
     await image_description(message=message)
-    await state.clear()
 
 
 @router.message(ImageDescription.image_name)
 async def finish_image_description_imagga(message: Message, state: FSMContext):
-    """Работа с FSM ImageDescription.Отправляет пользователю описание изображения"""
+    """Работа с FSM ImageDescription.Отправляет пользователю описание изображения."""
 
-    if message.content_type == ContentType.PHOTO:
-        await message.answer("Идет анализ изображения")
-        await bot.download(file=message.photo[-1].file_id, destination="immaga.jpg")
-        result, mess = get_image_description_by_immaga(language="ru", limit=20)
-        if result:
-            await bot.send_message(chat_id=message.chat.id, text=result)
-            await image_description(message=message)
-            await state.clear()
-            os.remove(os.path.join(Path(__file__).parent.parent, "immaga.jpg"))
-        else:
-            await bot.send_message(
-                chat_id=message.chat.id,
-                text=f"{mess['err']}\n\nСкидывайте снова фотографию для анализа изображения",
-            )
-            os.remove(os.path.join(Path(__file__).parent.parent, "immaga.jpg"))
+    data = await state.get_data()
+    spam_count = data["spam_count"]
+
+    # Защита от спама когда пользователь делает много запросов
+    if spam_count == 1:
+        return
     else:
-        await message.answer(
-            "Скидываемое изображение должно быть формата jpg, jpeg, png или gif\n\n"
-            "Скидывайте снова фотографию для анализа изображения"
-        )
+        await state.set_state(ImageDescription.spam_count)
+        await state.update_data(spam_count=1)
+        await state.set_state(ImageDescription.image_name)
+
+        if message.content_type == ContentType.PHOTO:
+            await message.answer("Идет анализ изображения")
+            await bot.download(file=message.photo[-1].file_id, destination="immaga.jpg")
+            result, mess = get_image_description_by_immaga(language="ru", limit=20)
+            if result:
+                await state.clear()
+                await bot.send_message(
+                    chat_id=message.chat.id,
+                    text=result,
+                    reply_markup=ReplyKeyboardRemove(),
+                )
+                await image_description(message=message)
+                os.remove(os.path.join(Path(__file__).parent.parent, "immaga.jpg"))
+            else:
+                await state.set_state(ImageDescription.spam_count)
+                await state.update_data(spam_count=0)
+                await state.set_state(ImageDescription.image_name)
+
+                await bot.send_message(
+                    chat_id=message.chat.id,
+                    text=f"{mess['err']}\n\nСкидывайте снова фотографию для анализа изображения",
+                )
+                os.remove(os.path.join(Path(__file__).parent.parent, "immaga.jpg"))
+        else:
+            await state.set_state(ImageDescription.spam_count)
+            await state.update_data(spam_count=1)
+            await state.set_state(ImageDescription.image_name)
+
+            await message.answer(
+                "Скидываемое изображение должно быть формата jpg, jpeg, png или gif\n\n"
+                "Скидывайте снова фотографию для анализа изображения"
+            )

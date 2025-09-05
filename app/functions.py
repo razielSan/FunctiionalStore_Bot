@@ -3,6 +3,7 @@ import os
 import sys
 import json
 from pathlib import Path
+import base64
 
 import requests
 from icrawler.builtin import BingImageCrawler
@@ -161,24 +162,71 @@ def delete_images_and_archive(path_archive: str, count_images: int):
             os.remove(path)
 
 
-def get_and_save_image(url: str, filename: str):
+def get_and_save_image(
+    url: str,
+    filename: str,
+    gpt_image_1=None,
+):
     """Возвращает скачанную с url картинку
     Args:
         url (str): URL для скачивания картинки
         filename (str, optional): Имя файла
     """
     try:
-        response = requests.get(url)
+        if gpt_image_1:
+            image_file = base64.b64decode(url)
+            with open(filename, "wb") as image:
+                image.write(image_file)
+        else:
+            response = requests.get(url)
 
-        with open(filename, "wb") as file:
-            for chunk in response.iter_content(1024):
-                file.write(chunk)
+            with open(filename, "wb") as file:
+                for chunk in response.iter_content(1024):
+                    file.write(chunk)
 
         path = os.path.join(sys.path[0], filename)
         return path
     except Exception as err:
         print(err)
         return False
+
+
+def get_url_video_generate_by_caila(
+    url: str,
+    api_key: str,
+    model: str,
+    promtp: str,
+    size: str = "1024x1024",
+):
+
+    quality = "low"
+    if model == "gpt-image-1":
+        quality = "low"
+    elif model == "dall-e-3":
+        quality = "standard"
+
+    HEADERS = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {api_key}",
+    }
+
+    json_data = json.dumps(
+        {
+            "model": f"just-ai/openai-proxy/{model}",
+            "prompt": promtp,
+            "quality": quality,
+            "size": size,
+        },
+    )
+    response = requests.post(url, headers=HEADERS, data=json_data)
+
+    if response.status_code == 400:
+        return response.status_code
+
+    if model == "dall-e-3":
+        return response.json()["data"][0]["url"]
+    elif model == "gpt-image-1":
+        return response.json()["data"][0]["b64_json"]
 
 
 def get_air_pollution_city(city: str):

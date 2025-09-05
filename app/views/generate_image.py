@@ -1,20 +1,26 @@
 import os
+import time
 
 from aiogram import Router, F
 from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove, FSInputFile
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
+from aiogram.filters import StateFilter
 
-from keyboards.inline_kb import get_button_generate_image
+
+from keyboards.inline_kb import (
+    get_button_generate_image,
+    get_button_model_video_generate_by_caila,
+)
 from keyboards.reply_kb import get_cancel_button
-from functions import get_and_save_image
+from functions import get_and_save_image, get_url_video_generate_by_caila
 from config import settings
 from extension import bot
 
 router = Router(name=__name__)
 
 
-@router.message(F.text == "Генерация Изображений")
+@router.message(StateFilter(None), F.text == "Генерация Изображений")
 async def generate_image(message: Message):
     """Возвращает пользвотателю клавиатуру с выбором сайтов генераторов изображений."""
 
@@ -25,61 +31,135 @@ async def generate_image(message: Message):
 
 
 # Логика генерации изображения для сайт pollinations.ai
-class GenerateImagePollinations(StatesGroup):
-    """FSM для генерации изображений c сайта pollinations.api."""
-    image = State()
+class GenerateImage(StatesGroup):
+    """FSM для генерации изображений"""
+
+    count = State()
+    source = State()
+    model = State()
 
 
-@router.callback_query(F.data == "pollinations")
+@router.callback_query(F.data.startswith("generate_image "))
 async def start_generate_image_pollinations(call: CallbackQuery, state: FSMContext):
-    """Работа с FSM GenerateImagePollinations.Просит пользователя ввести описание для изображения."""
+    """Работа с FSM GenerateImage.Просит пользователя выбрать варианты моделей"""
 
-    await call.message.answer(
-        text="Введите описание для генерируемого изображения",
-        reply_markup=get_cancel_button(),
-    )
-    await state.set_state(GenerateImagePollinations.image)
+    _, source = call.data.split(" ")
+
+    await state.set_state(GenerateImage.source)
+    await state.update_data(source=source)
+
+    if source == "pollinations":
+        await add_model_generate_image(call=call, state=state)
+    else:
+        data = await state.get_state()
+        print(data)
+        await bot.send_message(
+            chat_id=call.message.chat.id,
+            text="Доступные варианты",
+            reply_markup=get_cancel_button(),
+        )
+        await call.message.answer(
+            text="Выберите модель из списка вариантов",
+            reply_markup=get_button_model_video_generate_by_caila(),
+        )
+
+    # await state.set_state(GenerateImagePollinations.image)
 
 
-@router.message(GenerateImagePollinations.image, F.text == "Отмена")
+@router.message(GenerateImage.source, F.text == "Отмена")
+@router.message(GenerateImage.model, F.text == "Отмена")
 async def cancel_generate_image_pollinations(message: Message, state: FSMContext):
     """Работа с FSM GenerateImagePollinations. Отменяет все действия."""
 
     current_state = await state.get_state()
+    print(current_state)
 
     if current_state is None:
         return
 
+    await state.clear()
     await message.answer(
         text="Генерация картинки c помощью pollinations.ai отменена",
         reply_markup=ReplyKeyboardRemove(),
     )
     await generate_image(message=message)
-    await state.clear()
 
 
-@router.message(GenerateImagePollinations.image, F.text)
-async def finish_generate_image_pollinations(message: Message, state: FSMContext):
+@router.callback_query(GenerateImage.source, F.data.startswith("gv "))
+async def add_model_generate_image(call: CallbackQuery, state: FSMContext):
+    _, model = call.data.split(" ")
+
+    await state.set_state(GenerateImage.count)
+    await state.update_data(count=0)
+    await state.set_state(GenerateImage.model)
+    await state.update_data(model=model)
+    await call.message.answer(
+        text="Введите описание для генерируемого изображения",
+        reply_markup=get_cancel_button(),
+    )
+
+
+@router.message(GenerateImage.model, F.text)
+async def finish_generate_image(message: Message, state: FSMContext):
     """Работа с FSM GenerateImagePollinations. Возвращает пользователю сгенерированную картинку."""
 
-    await bot.send_message(chat_id=message.chat.id, text="Идет генерация изображения")
+    data = await state.get_data()
+    source = data["source"]
+    model = data.get("model")
 
-    url = settings.modelimage.pollinations.IMAGE_GENERATE.format(message.text)
-
-    path_image = get_and_save_image(url=url, filename="pollinations.jpg")
-
-    if path_image:
-        await bot.send_photo(
-            chat_id=message.chat.id,
-            photo=FSInputFile(path=path_image),
-            reply_markup=ReplyKeyboardRemove(),
-        )
-        os.remove(path=path_image)
-        await state.clear()
-        await generate_image(message=message)
+    # Защита от спама когда пользователь делает много запросов
+    count = data["count"]
+    if count == 1:
+        return
     else:
-        await message.answer(
-            "Произошла ошибка при скачивании, попробуйте позже",
-            reply_markup=ReplyKeyboardRemove(),
+        await state.set_state(GenerateImage.count)
+        await state.update_data(count=1)
+        await state.set_state(GenerateImage.model)
+
+        await bot.send_message(
+            chat_id=message.chat.id, text="Идет генерация изображения"
         )
-        await generate_image(message=message)
+        if source == "pollinations":
+            url = settings.modelimage.pollinations.IMAGE_GENERATE.format(message.text)
+            path_image = get_and_save_image(url=url, filename="pollinations.jpg")
+        elif source == "caila":
+            url = get_url_video_generate_by_caila(
+                url=settings.modelimage.caila.URL_IMAGE_GENERATE,
+                api_key=settings.modelimage.caila.ApiKey,
+                model=model,
+                promtp=message.text.strip(),
+            )
+
+            if url == 400:
+                await state.clear()
+                await message.answer(
+                    "Введено неккоректное описание изображения.",
+                    reply_markup=ReplyKeyboardRemove(),
+                )
+                await generate_image(message=message)
+                return
+            gpt_image_1 = True if model == "gpt-image-1" else None
+            path_image = get_and_save_image(
+                url=url,
+                filename="caila.jpg",
+                gpt_image_1=gpt_image_1,
+            )
+        elif not source:
+            await message.answer("Выберите модель из списка вариантов")
+
+        if path_image:
+            await state.clear()
+            await bot.send_photo(
+                chat_id=message.chat.id,
+                photo=FSInputFile(path=path_image),
+                reply_markup=ReplyKeyboardRemove(),
+            )
+            os.remove(path=path_image)
+            await generate_image(message=message)
+        else:
+            await state.clear()
+            await message.answer(
+                "Произошла ошибка при скачивании, попробуйте позже",
+                reply_markup=ReplyKeyboardRemove(),
+            )
+            await generate_image(message=message)

@@ -5,6 +5,7 @@ import os
 from aiogram import Router, F
 from aiogram.types import Message, FSInputFile
 from aiogram.fsm.context import FSMContext
+from aiogram.filters import StateFilter
 from aiogram.fsm.state import State, StatesGroup
 
 from keyboards.reply_kb import get_cancel_button, get_start_button_bot
@@ -20,11 +21,12 @@ router = Router(name=__name__)
 class FindImage(StatesGroup):
     """FSM для поиска изображений."""
 
+    spam_count = State()
     name = State()
     count = State()
 
 
-@router.message(F.text == "Поиск Изображений")
+@router.message(StateFilter(None), F.text == "Поиск Изображений")
 async def start_find_image(message: Message, state: FSMContext):
     """Работа с FSM FindImage.Просит у пользователя ввести название изображения."""
     await message.answer(
@@ -59,6 +61,8 @@ async def add_name_find_image(message: Message, state: FSMContext):
     await state.update_data(name=message.text)
 
     await message.answer("Введите необходимое количество изображений для скачивания")
+    await state.set_state(FindImage.spam_count)
+    await state.update_data(spam_count=0)
     await state.set_state(FindImage.count)
 
 
@@ -66,53 +70,68 @@ async def add_name_find_image(message: Message, state: FSMContext):
 async def finsh_find_image(message: Message, state: FSMContext):
     """Работа с FSM FindImage.Скидывает zip архив пользователю найденных изображений."""
     number, mess = chek_number_is_positivity(number=message.text)
-    if not number:
-        await message.answer(
-            text=f"{mess['err']}\n\n"
-            "Введите снова необходимое количество изображений для скачиванияи"
-        )
+    data = await state.get_data()
+    spam_count = data["spam_count"]
+
+    # Защита от спама когда пользователь делает много запросов
+    if spam_count == 1:
+        return
     else:
-        await message.answer(text="Идет Поиск")
-        data = await state.get_data()
-        name = data["name"]
-        path = os.path.join(sys.path[0], f"{name}.zip")
+        await state.set_state(FindImage.spam_count)
+        await state.update_data(spam_count=1)
+        await state.set_state(FindImage.count)
 
-        count_pictures = number
-        filters = {"size": "large"}
-        result = find_image_with_goole_and_save_image(
-            name=name,
-            count=count_pictures,
-            filters=filters,
-            path=sys.path[0],
-        )
-        if result:
+        if not number:
+            await state.set_state(FindImage.spam_count)
+            await state.update_data(spam_count=0)
+            await state.set_state(FindImage.count)
 
-            # Указываем имена изображений
-            list_images_name = []
-            for number in range(1, count_pictures + 1):
-                list_images_name.append(f"{number:06}.jpg")
-
-            # Сохраняем изображения в архив
-            with zipfile.ZipFile(f"{name}.zip", "w") as rf:
-                try:
-                    for file_path in list_images_name:
-                        rf.write(file_path)
-                except Exception:
-                    pass
-
-            await bot.send_document(
-                chat_id=message.chat.id,
-                document=FSInputFile(path=path),
-                caption="Скаченные изображения",
+            await message.answer(
+                text=f"{mess['err']}\n\n"
+                "Введите снова необходимое количество изображений для скачиванияи"
             )
+        else:
+            await message.answer(text="Идет Поиск")
+            data = await state.get_data()
+            name = data["name"]
+            path = os.path.join(sys.path[0], f"{name}.zip")
 
-            delete_images_and_archive(
-                path_archive=path,
-                count_images=count_pictures,
+            count_pictures = number
+            filters = {"size": "large"}
+            result = find_image_with_goole_and_save_image(
+                name=name,
+                count=count_pictures,
+                filters=filters,
+                path=sys.path[0],
             )
+            if result:
 
-            await state.clear()
-            await start_find_image(
-                message=message,
-                state=state,
-            )
+                # Указываем имена изображений
+                list_images_name = []
+                for number in range(1, count_pictures + 1):
+                    list_images_name.append(f"{number:06}.jpg")
+
+                # Сохраняем изображения в архив
+                with zipfile.ZipFile(f"{name}.zip", "w") as rf:
+                    try:
+                        for file_path in list_images_name:
+                            rf.write(file_path)
+                    except Exception:
+                        pass
+
+                await bot.send_document(
+                    chat_id=message.chat.id,
+                    document=FSInputFile(path=path),
+                    caption="Скаченные изображения",
+                )
+
+                delete_images_and_archive(
+                    path_archive=path,
+                    count_images=count_pictures,
+                )
+
+                await state.clear()
+                await start_find_image(
+                    message=message,
+                    state=state,
+                )
