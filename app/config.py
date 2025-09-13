@@ -22,6 +22,13 @@ class CailaIoImageGeneration(BaseModel):
     URL_IMAGE_GENERATE: str = "https://caila.io/api/adapters/openai/images/generations"
 
 
+class NeuroimgImageGeneration(BaseModel):
+    """Модель сайта https://neuroimg.art/."""
+
+    ApiKey: Optional[str] = None
+    URL_IMAGE_GENERATE: str = "https://neuroimg.art/api/v1/free-generate"
+
+
 class ImaggaImageDescription(BaseModel):
     """Модель сайта https://imagga.com/."""
 
@@ -31,9 +38,33 @@ class ImaggaImageDescription(BaseModel):
 
 
 class YoutubeAPI(BaseModel):
+    """Модель для сайта https://www.youtube.com"""
+
     YoutubeApiKey: Optional[str] = None
     VIDEO_URL: str = "https://www.youtube.com/watch?v={}"
     CHANNEL_URL: str = "https://www.youtube.com/channel/{}"
+
+
+class WebshareProxies(BaseModel):
+    """Модель для сайта "https://www.webshare.io/"""
+
+    ApiKey: Optional[str] = None
+    PATH: str = "static/files/webshare/"
+    URL_CONFIG: str = "https://proxy.webshare.io/api/v2/proxy/config/"  # url для получения данных о пользователе
+    URL_PROXIES_LIST: str = "https://proxy.webshare.io/api/v2/proxy/list/download/{}/-/any/username/direct/-/"  # url для получения списка  прокси
+
+
+class IpapiIpInfo(BaseModel):
+    """Модель для сайта http://api.ipapi.com."""
+
+    AccessKey: Optional[str] = None
+    ULR_IP_INFO: str = "http://api.ipapi.com/api/{}?access_key={}&hostname=1"  # url для получения информации о ip
+
+
+class IpInfo(BaseModel):
+    """Модели для сбора информации по ip."""
+
+    ipapi: IpapiIpInfo = IpapiIpInfo()
 
 
 class ImageGeneration(BaseModel):
@@ -41,12 +72,19 @@ class ImageGeneration(BaseModel):
 
     pollinations: PollinationsImageGeneration = PollinationsImageGeneration()
     caila: CailaIoImageGeneration = CailaIoImageGeneration()
+    neuroimg: NeuroimgImageGeneration = NeuroimgImageGeneration()
 
 
 class ImageDescription(BaseModel):
     """Модели для описания изображений."""
 
     immaga: ImaggaImageDescription = ImaggaImageDescription()
+
+
+class Proxies(BaseModel):
+    """Модели для получения прокси."""
+
+    webshare: WebshareProxies = WebshareProxies()
 
 
 class FindVideo(BaseModel):
@@ -201,6 +239,8 @@ class Settings(BaseSettings):
     modelimage: ImageGeneration = ImageGeneration()
     image_description: ImageDescription = ImageDescription()
     find_video: FindVideo = FindVideo()
+    proxies: Proxies = Proxies()
+    ip_info: IpInfo = IpInfo()
 
 
 settings = Settings()

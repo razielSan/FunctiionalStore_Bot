@@ -1,5 +1,4 @@
 import os
-import time
 
 from aiogram import Router, F
 from aiogram.types import CallbackQuery, Message, ReplyKeyboardRemove, FSInputFile
@@ -13,7 +12,11 @@ from keyboards.inline_kb import (
     get_button_model_video_generate_by_caila,
 )
 from keyboards.reply_kb import get_cancel_button
-from functions import get_and_save_image, get_url_video_generate_by_caila
+from functions import (
+    get_and_save_image,
+    get_url_video_generate_by_caila,
+    get_url_video_generate_by_neuroimg,
+)
 from config import settings
 from extension import bot
 
@@ -48,7 +51,7 @@ async def start_generate_image_pollinations(call: CallbackQuery, state: FSMConte
     await state.set_state(GenerateImage.source)
     await state.update_data(source=source)
 
-    if source == "pollinations":
+    if source == "pollinations" or source == "neuroimg":
         await add_model_generate_image(call=call, state=state)
     else:
         data = await state.get_state()
@@ -79,7 +82,7 @@ async def cancel_generate_image_pollinations(message: Message, state: FSMContext
 
     await state.clear()
     await message.answer(
-        text="Генерация картинки c помощью pollinations.ai отменена",
+        text="Генерация изображеня отменена",
         reply_markup=ReplyKeyboardRemove(),
     )
     await generate_image(message=message)
@@ -122,6 +125,14 @@ async def finish_generate_image(message: Message, state: FSMContext):
         if source == "pollinations":
             url = settings.modelimage.pollinations.IMAGE_GENERATE.format(message.text)
             path_image = get_and_save_image(url=url, filename="pollinations.jpg")
+        elif source == "neuroimg":
+            url = get_url_video_generate_by_neuroimg(
+                url=settings.modelimage.neuroimg.URL_IMAGE_GENERATE,
+                api_key=settings.modelimage.neuroimg.ApiKey,
+                prompt=message.text,
+            )
+            path_image = get_and_save_image(url=url, filename="neuroimg.jpg")
+
         elif source == "caila":
             url = get_url_video_generate_by_caila(
                 url=settings.modelimage.caila.URL_IMAGE_GENERATE,
@@ -159,7 +170,7 @@ async def finish_generate_image(message: Message, state: FSMContext):
         else:
             await state.clear()
             await message.answer(
-                "Произошла ошибка при скачивании, попробуйте позже",
+                "Произошла ошибка при генерации изображения, попробуйте позже",
                 reply_markup=ReplyKeyboardRemove(),
             )
             await generate_image(message=message)

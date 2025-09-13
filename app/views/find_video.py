@@ -129,6 +129,18 @@ async def finish_find_image(message: Message, state: FSMContext):
             await state.set_state(FindVideo.end_search_video)
 
 
+@router.message(FindVideo.end_search_video, F.text)
+async def message_user(message: Message):
+    """Отправляет пользователю сообщение чтобы он узнал если он не знает как
+    закончить поиск видео
+    """
+    await bot.send_message(
+        chat_id=message.chat.id,
+        text="Нажмите 'Завершить' чтобы закончить поиск видео",
+        reply_markup=ReplyKeyboardRemove(),
+    )
+
+
 @router.callback_query(FindVideo.end_search_video, F.data == "end_search_video")
 @router.callback_query(FindVideo.end_search_video, F.data.startswith("fvy "))
 async def finish_find_video(call: CallbackQuery, state: FSMContext):

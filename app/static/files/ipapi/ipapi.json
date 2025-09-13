@@ -1,0 +1,30 @@
+{
+    "ip": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+    "hostname": null,
+    "type": "ipv6",
+    "continent_code": null,
+    "continent_name": null,
+    "country_code": null,
+    "country_name": null,
+    "region_code": null,
+    "region_name": null,
+    "city": null,
+    "zip": null,
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "msa": null,
+    "dma": null,
+    "radius": null,
+    "ip_routing_type": null,
+    "connection_type": null,
+    "location": {
+        "geoname_id": null,
+        "capital": null,
+        "languages": null,
+        "country_flag": null,
+        "country_flag_emoji": null,
+        "country_flag_emoji_unicode": null,
+        "calling_code": null,
+        "is_eu": null
+    }
+}

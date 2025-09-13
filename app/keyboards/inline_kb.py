@@ -83,6 +83,11 @@ def get_button_generate_image():
                     text="caila.io", callback_data="generate_image caila"
                 ),
             ],
+            [
+                InlineKeyboardButton(
+                    text="neuroimg.art", callback_data="generate_image neuroimg"
+                ),
+            ],
         ],
         resize_keyboard=True,
     )
@@ -111,6 +116,43 @@ def get_button_find_video():
             [
                 InlineKeyboardButton(
                     text="youtube.com", callback_data="FindVideo youtube"
+                ),
+            ],
+        ],
+        resize_keyboard=True,
+    )
+    return inline_kb
+
+
+def get_button_proxies():
+    """Возвращает инлайн кнопки выбора получения прокси."""
+
+    inline_kb = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="webshare.io", callback_data="proxies webshare"
+                ),
+            ],
+        ],
+        resize_keyboard=True,
+    )
+    return inline_kb
+
+
+def get_button_ip():
+    """Возвращает инлайн кнопки выбора информации по ip."""
+
+    inline_kb = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="Узнать свой api id telegram", callback_data="ip telegram"
+                ),
+            ],
+            [
+                InlineKeyboardButton(
+                    text="Узнать информацию по ip", callback_data="ip ip_info"
                 ),
             ],
         ],

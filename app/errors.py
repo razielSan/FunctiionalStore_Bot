@@ -1,3 +1,7 @@
+from pydantic import BaseModel, field_validator
+from pydantic.networks import IPvAnyAddress
+
+
 def chek_number_is_positivity(number: str):
     """Проверяет является ли входящее значение положительным числом.
     Возвращает кортеж формата
@@ -16,3 +20,17 @@ def chek_number_is_positivity(number: str):
         return number, {"err": None}
     except Exception:
         return None, {"err": "Данные должны быть целым числом"}
+
+
+class Ip4Handler(BaseModel):
+    """Класс для валидации ip4 адресса."""
+
+    ip4: IPvAnyAddress
+
+
+class Ipi6Handler(BaseModel):
+    """Класс для валидации ip6 адресса."""
+
+    ip6: IPvAnyAddress
+
+

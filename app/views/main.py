@@ -1,5 +1,5 @@
 from aiogram import Router, F
-from aiogram.types import Message   
+from aiogram.types import Message
 from aiogram.filters import StateFilter
 
 from keyboards.reply_kb import get_start_button_bot

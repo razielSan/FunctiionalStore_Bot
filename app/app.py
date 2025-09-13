@@ -9,6 +9,8 @@ from views.find_image import router as find_image_router
 from views.generate_image import router as generate_image_router
 from views.image_descriptions import router as image_description_router
 from views.find_video import router as find_video_router
+from views.user_info import router as user_info_router
+from views.get_proxies import router as proxies_router
 
 
 async def on_startup():
@@ -22,11 +24,13 @@ async def main():
     await bot.delete_webhook(drop_pending_updates=True)
 
     dp.startup.register(on_startup)
+    dp.include_router(proxies_router)
     dp.include_router(find_video_router)
     dp.include_router(image_description_router)
     dp.include_router(generate_image_router)
     dp.include_router(find_image_router)
     dp.include_router(weather_forecast_router)
+    dp.include_router(user_info_router)
     dp.include_router(main_router)
 
     await dp.start_polling(bot)

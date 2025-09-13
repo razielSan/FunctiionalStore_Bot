@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, Optional
 import os
 import sys
 import json
@@ -6,6 +6,7 @@ from pathlib import Path
 import base64
 
 import requests
+from aiogram.utils.markdown import hbold
 from icrawler.builtin import BingImageCrawler
 from googleapiclient.discovery import build
 
@@ -197,13 +198,30 @@ def get_url_video_generate_by_caila(
     model: str,
     promtp: str,
     size: str = "1024x1024",
+    quality_gpt_image_1: str = "low",
+    quality_dall_e_3: str = "standard",
 ):
+    """Возвращает b64_json или url для скачивания изображения
 
+    Работа с сайтом https://caila.io/
+
+    Args:
+        url (str): URL генерации изображения
+        api_key (str): API Key для доступа
+        model (str): модель генерации изображения
+        promtp (str): описание изображения
+        size (str, optional): размер изображения
+        quality_gpt_image_1 (str, optional): качество для модели gpt-image-1
+        quality_dall_e_3 (str, optional): качество для модели dall-e-3
+
+    Returns:
+        _type_: Возвращае b64_json или url для скачивания
+    """
     quality = "low"
     if model == "gpt-image-1":
-        quality = "low"
+        quality = quality_gpt_image_1
     elif model == "dall-e-3":
-        quality = "standard"
+        quality = quality_dall_e_3
 
     HEADERS = {
         "Content-Type": "application/json",
@@ -227,6 +245,41 @@ def get_url_video_generate_by_caila(
         return response.json()["data"][0]["url"]
     elif model == "gpt-image-1":
         return response.json()["data"][0]["b64_json"]
+
+
+def get_url_video_generate_by_neuroimg(
+    url: str,
+    api_key: str,
+    prompt: str,
+    model: str = "flux-schnell",
+    width: int = 1024,
+    heigh: int = 1024,
+):
+    """Возвращает url для скачивания изображения
+
+    Работа с сайтом https://neuroimg.art
+
+    Args:
+        url (str): url генерации изображения
+        api_key (str): API Key для доступа
+        prompt (str): Описание изображения
+        model (str, optional): модель генерации изображения
+        width (int, optional): Ширина изображения
+        heigh (int, optional): Высота изображения
+    Returns:
+        _type_: Возвращает url для скачивания изображения
+    """
+
+    data = {
+        "token": api_key,
+        "model": model,
+        "prompt": prompt,
+        "width": width,
+        "heigh": heigh,
+    }
+    response = requests.post(url=url, json=data)
+
+    return response.json().get("image_url", None)
 
 
 def get_air_pollution_city(city: str):
@@ -377,3 +430,132 @@ def get_description_video_by_youtube(
             )
 
     return array_video_description
+
+
+def get_user_info(
+    api_id: int,
+    first_name: str,
+    user_name: str,
+    last_name: Optional[str],
+) -> str:
+    """Возвращает строку с информацией о пользователе.
+
+    Args:
+        api_id (int): Id пользователя телеграмма
+        first_name (str): first_name пользователя
+        user_name (str): username пользователя
+
+    Returns:
+        _type_: Возвращает строку с информацией о пользователе
+    """
+    user_json = (
+        f"@{user_name}\nId: {hbold(api_id)}\nFirst name: {hbold(first_name)}\n"
+        f"Last_name: {hbold(last_name)}\n"
+    )
+
+    return user_json
+
+
+def get_proxies_by_webshare(
+    url_config: str,
+    url_proxeis_list: str,
+    api_key: str,
+    path_proxies: str,
+    filename: str,
+):
+    """Возврщает строку с 10 прокси для сайта https://www.webshare.io/
+
+    Args:
+        url_config (str): url для получения данных о пользователе
+        url_proxeis_list (str): url для получения списка  прокси
+        api_key (str): Api ключ
+        path_proxies (str): Относительный путь до файла
+        filename (str): Имя файла
+
+    Returns:
+        _type_: Возврщает строку с 10 прокси
+    """
+    try:
+        response = requests.get(
+            url_config,
+            headers={
+                "Authorization": f"{api_key}",
+            },
+        )
+    except Exception as err:
+        print(err)
+        return None
+
+    token = response.json()["proxy_list_download_token"]
+
+    response = requests.get(url=url_proxeis_list.format(token))
+
+    proxies_list = response.text.split("\r\n")
+    proxies_list.pop(-1)
+
+    path = Path(__file__).parent
+
+    full_path = os.path.join(path, path_proxies, filename)
+
+    with open(full_path, "w", encoding="utf-8") as file:
+        for proxy in proxies_list:
+            ip, port, username, password = proxy.split(":")
+            file.write(f"{username}:{password}@{ip}:{port}\n")
+
+    with open(full_path, "r", encoding="utf-8") as file:
+        proxies = file.read()
+
+    return proxies
+
+
+def get_ip_info(ip: str, url: str, acces_key: str):
+    """Возвращает пользователю информацию по ip, из сайта http://api.ipapi.com.
+
+    Args:
+        ip (str): ip пользователя
+        url (str): _description_
+        acces_key (str): ключ доступа
+
+    Returns:
+        _type_: Возвращает пользователю информацию по ip
+    """
+
+    url = url.format(ip, acces_key)
+    response = requests.get(url).json()
+    flag = response.get("country_code")
+
+    with open("file.json", "w") as file:
+        json.dump(response, file, indent=4, ensure_ascii=False)
+
+    path = Path(__file__).parent
+    if flag:
+        code = flag.lower()
+        full_path = os.path.join(path, f"static/img/flag/{code}.png")
+    else:
+        full_path = os.path.join(path, f"static/img/flag/none.png")
+    data = (
+        f"ip: {response.get('ip', None)}\nhostname: {response.get('hostname', None)}\n"
+        f"type: {response.get('type', None)}\n"
+        f"continent_code: {response.get('continent_code', None)}\n"
+        f"continent_name: {response.get('continent_name', None)}\n"
+        f"country_code: {response.get('country_code', None)}\n"
+        f"country_name: {response.get('country_name', None)}\n"
+        f"region_code: {response.get('region_code', None)}\n"
+        f"region_name: {response.get('region_name', None)}\n"
+        f"city: {response.get('city', None)}\n"
+        f"zip: {response.get('zip', None)}\n"
+        f"latitude: {response.get('latitude', None)}\n"
+        f"longitude: {response.get('longitude', None)}\n"
+        f"msa: {response.get('msa', None)}\n"
+        f"dma: {response.get('dma', None)}\n"
+        f"radius: {response.get('radius', None)}\n"
+        f"ip_routing_typea: {response.get('ip_routing_typea', None)}\n"
+        f"connection_type: {response.get('connection_type', None)}\n"
+        f"geoname_id: {response['location'].get('geoname_id', None)}\n"
+        f"capital: {response['location'].get('capital', None)}\n"
+        f"country_flag_emoji: {response['location'].get('country_flag_emoji', None)}\n"
+        f"country_flag_emoji_unicode: {response['location'].get('country_flag_emoji_unicode', None)}\n"
+        f"calling_code: {response['location'].get('calling_code', None)}\n"
+        f"is_eu: {response['location'].get('is_eu', None)}\n"
+    )
+    return full_path, data

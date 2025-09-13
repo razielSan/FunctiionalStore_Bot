@@ -17,6 +17,10 @@ def get_start_button_bot():
                 KeyboardButton(text="Генерация Изображений"),
                 KeyboardButton(text="Описание Изображений"),
             ],
+            [
+                KeyboardButton(text="Информация по ip"),
+                KeyboardButton(text="Получить список прокси"),
+            ]
         ],
         resize_keyboard=True,
     )
