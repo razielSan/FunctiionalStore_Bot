@@ -219,12 +219,44 @@ def get_button_model_video_generate_by_caila():
     return inline_kb
 
 
-def get_button_find_video_youtube_by_forward_or_back(
+def get_button_recommender_system():
+    """Возвращает инлайн кнопки выбора рекомендательной системы."""
+
+    inline_kb = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="кинопоиск", callback_data="recsystem kinopoisk"
+                ),
+            ],
+        ],
+        resize_keyboard=True,
+    )
+    return inline_kb
+
+
+def get_button_recommender_system_by_kinopoisk():
+    """Возвращает инлайн кнопки выбора рекомендательной системы для сайта https://www.kinopoisk.ru/."""
+
+    inline_kb = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="По названию фильма", callback_data="kinopoisk_recommender name"
+                ),
+            ],
+        ],
+        resize_keyboard=True,
+    )
+    return inline_kb
+
+
+def get_button_for_forward_or_back(
     video_search_list: List,
     count: int = 0,
     step: int = 1,
 ):
-    """Возвращает инлайн кнопки назади или вперед для поиска видео по youtube."""
+    """Возвращает инлайн кнопки для прллистывания назад или вперед."""
 
     inline_kb = InlineKeyboardBuilder()
     if count == 0:
@@ -233,35 +265,25 @@ def get_button_find_video_youtube_by_forward_or_back(
         else:
             inline_kb.add(
                 InlineKeyboardButton(
-                    text="Вперед 👉", callback_data=f"fvy forward {count+step}"
+                    text="Вперед 👉", callback_data=f"fb forward {count+step}"
                 )
-            )
-            inline_kb.row(
-                InlineKeyboardButton(text="Завершить", callback_data="end_search_video")
             )
     else:
         if len(video_search_list) - count == step:
             inline_kb.add(
                 InlineKeyboardButton(
-                    text="👈 Назад", callback_data=f"fvy back {count-step}"
+                    text="👈 Назад", callback_data=f"fb back {count-step}"
                 )
-            )
-            inline_kb.row(
-                InlineKeyboardButton(text="Завершить", callback_data="end_search_video")
             )
         elif len(video_search_list) - count >= step:
             inline_kb.add(
                 InlineKeyboardButton(
-                    text="👈 Назад", callback_data=f"fvy back {count-step}"
+                    text="👈 Назад", callback_data=f"fb back {count-step}"
                 )
             )
             inline_kb.add(
                 InlineKeyboardButton(
-                    text="Вперед 👉", callback_data=f"fvy forward {count+step}"
+                    text="Вперед 👉", callback_data=f"fb forward {count+step}"
                 )
             )
-            inline_kb.row(
-                InlineKeyboardButton(text="Завершить", callback_data="end_search_video")
-            )
-
     return inline_kb.as_markup(resize_keyboard=True)

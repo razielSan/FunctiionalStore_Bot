@@ -61,6 +61,18 @@ class IpapiIpInfo(BaseModel):
     ULR_IP_INFO: str = "http://api.ipapi.com/api/{}?access_key={}&hostname=1"  # url для получения информации о ip
 
 
+class KinopoiskRecommenderSystem(BaseModel):
+    ApiKey: Optional[str] = None
+    URL_SEARCH_VIDEO_NAME: str = "https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit={}&query={}"
+    URL_SEARCH_UNIVERSAL_VIDEO: str = "https://api.kinopoisk.dev/v1.4/movie?page=1&limit={}"
+
+
+class RecommenderSystem(BaseModel):
+    """Модели рекомендательных систем."""
+
+    kinopoisk: KinopoiskRecommenderSystem =  KinopoiskRecommenderSystem()
+
+
 class IpInfo(BaseModel):
     """Модели для сбора информации по ip."""
 
@@ -241,6 +253,7 @@ class Settings(BaseSettings):
     find_video: FindVideo = FindVideo()
     proxies: Proxies = Proxies()
     ip_info: IpInfo = IpInfo()
+    recommender_system: RecommenderSystem = RecommenderSystem()
 
 
 settings = Settings()

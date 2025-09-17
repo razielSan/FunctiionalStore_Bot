@@ -20,6 +20,9 @@ def get_start_button_bot():
             [
                 KeyboardButton(text="Информация по ip"),
                 KeyboardButton(text="Получить список прокси"),
+            ],
+            [
+                KeyboardButton(text="Рекомендательная система")
             ]
         ],
         resize_keyboard=True,

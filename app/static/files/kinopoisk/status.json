@@ -1,0 +1,30 @@
+[
+    {
+        "name": "active",
+        "slug": "active"
+    },
+    {
+        "name": "announced",
+        "slug": "announced"
+    },
+    {
+        "name": "completed",
+        "slug": "completed"
+    },
+    {
+        "name": "deleted",
+        "slug": "deleted"
+    },
+    {
+        "name": "filming",
+        "slug": "filming"
+    },
+    {
+        "name": "post-production",
+        "slug": "post-production"
+    },
+    {
+        "name": "pre-production",
+        "slug": "pre-production"
+    }
+]

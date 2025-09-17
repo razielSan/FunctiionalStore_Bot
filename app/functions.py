@@ -1,9 +1,10 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 import os
 import sys
 import json
 from pathlib import Path
 import base64
+import random
 
 import requests
 from aiogram.utils.markdown import hbold
@@ -387,6 +388,15 @@ def get_description_video_by_youtube(
     name_video: str,
     sort: str,
 ):
+    """Возвращает список, в котором содержится описания каждого найденного видео.
+
+    Args:
+        name_video (str): Имя видео
+        sort (str): тип сортировки
+
+    Returns:
+        _type_: Возвращает список, в котором содержится описания каждого найденного видео
+    """
     service = build(
         "youtube", "v3", developerKey=settings.find_video.youtube.YoutubeApiKey
     )
@@ -532,7 +542,7 @@ def get_ip_info(ip: str, url: str, acces_key: str):
         code = flag.lower()
         full_path = os.path.join(path, f"static/img/flag/{code}.png")
     else:
-        full_path = os.path.join(path, f"static/img/flag/none.png")
+        full_path = os.path.join(path, f"static/img/none.png")
     data = (
         f"ip: {response.get('ip', None)}\nhostname: {response.get('hostname', None)}\n"
         f"type: {response.get('type', None)}\n"
@@ -559,3 +569,129 @@ def get_ip_info(ip: str, url: str, acces_key: str):
         f"is_eu: {response['location'].get('is_eu', None)}\n"
     )
     return full_path, data
+
+
+def searches_for_videos_by_name_for_kinopoisk(
+    name: str,
+):
+    """Возвращает json с найденными видео для сайта кинпоиск.
+
+    Args:
+        name (str): Имя видео
+
+    Returns:
+        _type_: Возвращает json с найденными видео для сайта кинпоиск
+    """
+    url: str = settings.recommender_system.kinopoisk.URL_SEARCH_VIDEO_NAME.format(
+        10, name
+    )
+
+    HEADERS = {
+        "accept": "application/json",
+        "X-API-KEY": settings.recommender_system.kinopoisk.ApiKey,
+    }
+
+    response = requests.get(url=url, headers=HEADERS).json()
+    return response
+
+
+def get_recommender_video_for_kinopoisk(
+    list_genres: List,
+    limit: int,
+    type_video: str,
+    rating: str,
+):
+    """Возвращает список из словарей рекомендованных фильмов для кинопоиска.
+
+    Args:
+        list_genres (List): Список жанров фильма
+        limit (int): Количество выдаваемых фильмов
+        type_video (str): Тип видео
+        rating: (str): Рейтинг видео
+
+    Returns:
+        _type_: Возвращает список из словарей рекомендованных фильмов для кинопоиска
+    """
+    # Создает случайный список из двух жанров в которых снят фильм
+    array_genres = []
+    for genre in list_genres:
+        array_genres.append(genre.get("name"))
+    if len(array_genres) > 1:
+        array_genres = random.sample(array_genres, 2)
+
+    url: str = settings.recommender_system.kinopoisk.URL_SEARCH_UNIVERSAL_VIDEO.format(
+        limit
+    )
+
+    for genre in array_genres:
+        url = url + f"&genres.name={genre}"
+
+    HEADERS = {
+        "accept": "application/json",
+        "X-API-KEY": settings.recommender_system.kinopoisk.ApiKey,
+    }
+
+    url += f"&type={type_video}"
+    url += f"&rating.kp={rating}"
+
+    array_recommender = requests.get(url=url, headers=HEADERS).json().get("docs")
+
+    return array_recommender
+
+
+def get_description_video_from_kinopoisk(data: Dict) -> str:
+    """Возвращает строку с описанием фильма для кинопоиска.
+
+    Args:
+        data (Dict): Словарь содержащий данные о фильме
+
+    Returns:
+        _type_: Возвращает строку с описанием фильма для кинопоиска
+    """
+    name = f'{data.get("name")}\n\n'
+
+    array_genres = []
+    for genre in data.get("genres"):
+        array_genres.append(genre.get("name"))
+    array_countries = []
+    for country in data.get("countries"):
+        array_countries.append(country.get("name"))
+    if data.get("alternativeName", 0):
+        name += f"Другое название: {data.get('alternativeName')}\n"
+    if data.get("type", 0):
+        name += f"Тип видео: {data.get('type')}\n"
+    if data.get("year", 0):
+        name += f"Год выхода: {data.get('year')}\n"
+    if data.get("description", 0):
+        descripton = f"{data['description'][:200]}...."
+        name += f"Описание: {descripton}\n"
+    if data.get("shortDescription", 0):
+        name += f"Короткое описание: {data['shortDescription']}\n"
+    if data.get("movieLength", 0):
+        name += f"Длина фильма: {data['movieLength']} м.\n"
+    if data["rating"].get("kp", 0):
+        data_kp = data["rating"].get("kp")
+        name += f"Рейтинг на кинпоиске: {data_kp}\n"
+    if data["rating"].get("imdb", 0):
+        data_imdb = data["rating"].get("imdb")
+        name += f"Рейтинг на imdb: {data_imdb}\n"
+
+    genres = ""
+    if array_genres:
+        genres: str = "Список жанров: "
+        for g in array_genres:
+            genres += f"{g},"
+        genres = genres.strip(",")
+    if genres:
+        name += f"{genres}\n"
+
+    countries = ""
+    if array_countries:
+        countries: str = "Страны: "
+        for c in array_countries:
+            countries += f"{c},"
+        countries = countries.strip(",")
+    if countries:
+        name += f"{countries}\n"
+
+    return name

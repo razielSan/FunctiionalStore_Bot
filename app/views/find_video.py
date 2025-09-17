@@ -1,5 +1,3 @@
-import time
-
 from aiogram import Router, F
 from aiogram.types import ReplyKeyboardRemove, Message, CallbackQuery
 from aiogram.fsm.context import FSMContext
@@ -11,7 +9,7 @@ from keyboards.inline_kb import (
     get_button_choice_sorted_youtube_video,
 )
 from keyboards.reply_kb import get_cancel_button
-from keyboards.inline_kb import get_button_find_video_youtube_by_forward_or_back
+from keyboards.inline_kb import get_button_for_forward_or_back
 from functions import get_description_video_by_youtube
 from extension import bot
 
@@ -60,6 +58,8 @@ async def start_find_video(call: CallbackQuery, state: FSMContext):
     await state.set_state(FindVideo.sort)
 
 
+@router.message(FindVideo.end_search_video, F.text == "Отмена")
+@router.message(FindVideo.video_search_list, F.text == "Отмена")
 @router.message(FindVideo.sort, F.text == "Отмена")
 @router.message(FindVideo.source, F.text == "Отмена")
 async def cancel_find_video(message: Message, state: FSMContext):
@@ -116,13 +116,12 @@ async def finish_find_image(message: Message, state: FSMContext):
 
             await bot.send_message(
                 chat_id=message.chat.id,
-                text="Нажмите 'Завершить' чтобы закончить поиск видео",
-                reply_markup=ReplyKeyboardRemove(),
+                text="Нажмите 'Завершить' или 'Отмена' чтобы закончить поиск видео",
             )
 
             await message.answer(
                 text=result[0],
-                reply_markup=get_button_find_video_youtube_by_forward_or_back(
+                reply_markup=get_button_for_forward_or_back(
                     video_search_list=result,
                 ),
             )
@@ -136,35 +135,24 @@ async def message_user(message: Message):
     """
     await bot.send_message(
         chat_id=message.chat.id,
-        text="Нажмите 'Завершить' чтобы закончить поиск видео",
-        reply_markup=ReplyKeyboardRemove(),
+        text="Нажмите 'Отмена' чтобы закончить поиск видео",
     )
 
 
-@router.callback_query(FindVideo.end_search_video, F.data == "end_search_video")
-@router.callback_query(FindVideo.end_search_video, F.data.startswith("fvy "))
+@router.callback_query(FindVideo.end_search_video, F.data.startswith("fb "))
 async def finish_find_video(call: CallbackQuery, state: FSMContext):
     """Работа с FSM FindVideo.Пролистывает найденные виедо или завершает работу поиска видео."""
 
-    data = call.data
+    _, _, count = call.data.split(" ")
+    data = await state.get_data()
+    video_search_list = data["video_search_list"]
 
-    if data == "end_search_video":
-        await state.clear()
-        await call.message.answer(
-            "Поиск Видео Закончен", reply_markup=ReplyKeyboardRemove()
-        )
-        await find_video(message=call.message)
-    else:
-        _, _, count = data.split(" ")
-        data = await state.get_data()
-        video_search_list = data["video_search_list"]
-
-        await bot.edit_message_text(
-            text=video_search_list[int(count)],
-            reply_markup=get_button_find_video_youtube_by_forward_or_back(
-                video_search_list=video_search_list,
-                count=int(count),
-            ),
-            chat_id=call.message.chat.id,
-            message_id=call.message.message_id,
-        )
+    await bot.edit_message_text(
+        text=video_search_list[int(count)],
+        reply_markup=get_button_for_forward_or_back(
+            video_search_list=video_search_list,
+            count=int(count),
+        ),
+        chat_id=call.message.chat.id,
+        message_id=call.message.message_id,
+    )

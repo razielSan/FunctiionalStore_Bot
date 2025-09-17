@@ -55,7 +55,6 @@ async def start_generate_image_pollinations(call: CallbackQuery, state: FSMConte
         await add_model_generate_image(call=call, state=state)
     else:
         data = await state.get_state()
-        print(data)
         await bot.send_message(
             chat_id=call.message.chat.id,
             text="Доступные варианты",
@@ -75,7 +74,6 @@ async def cancel_generate_image_pollinations(message: Message, state: FSMContext
     """Работа с FSM GenerateImagePollinations. Отменяет все действия."""
 
     current_state = await state.get_state()
-    print(current_state)
 
     if current_state is None:
         return
