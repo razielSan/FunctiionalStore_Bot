@@ -385,8 +385,7 @@ def get_image_description_by_immaga(
 
 
 def get_description_video_by_youtube(
-    name_video: str,
-    sort: str,
+    name_video: str, sort: str,
 ):
     """Возвращает список, в котором содержится описания каждого найденного видео.
 
@@ -400,19 +399,31 @@ def get_description_video_by_youtube(
     service = build(
         "youtube", "v3", developerKey=settings.find_video.youtube.YoutubeApiKey
     )
-
-    response = (
-        service.search()
-        .list(
-            q=name_video,
-            part="snippet",
-            relevanceLanguage="ru",
-            type="video",
-            maxResults=50,
-            order=sort,
+    if sort == "channel":
+        response = (
+            service.search()
+            .list(
+                q=name_video,
+                part="snippet",
+                relevanceLanguage="ru",
+                type=sort,
+                maxResults=50,
+            )
+            .execute()
         )
-        .execute()
-    )
+    else:
+        response = (
+            service.search()
+            .list(
+                q=name_video,
+                part="snippet",
+                relevanceLanguage="ru",
+                type="video",
+                maxResults=50,
+                order=sort,
+            )
+            .execute()
+        )
 
     array_video_description = []
     order = 0
@@ -518,7 +529,12 @@ def get_proxies_by_webshare(
     return proxies
 
 
-def get_ip_info(ip: str, url: str, acces_key: str):
+def get_ip_info(
+    ip: str,
+    url: str,
+    acces_key: str,
+    file_name="file.json",
+):
     """Возвращает пользователю информацию по ip, из сайта http://api.ipapi.com.
 
     Args:
@@ -534,10 +550,12 @@ def get_ip_info(ip: str, url: str, acces_key: str):
     response = requests.get(url).json()
     flag = response.get("country_code")
 
-    with open("file.json", "w") as file:
+    path = Path(__file__).parent
+    ip_path = os.path.join(path, file_name)
+
+    with open(ip_path, "w", encoding="utf-8") as file:
         json.dump(response, file, indent=4, ensure_ascii=False)
 
-    path = Path(__file__).parent
     if flag:
         code = flag.lower()
         full_path = os.path.join(path, f"static/img/flag/{code}.png")
@@ -620,7 +638,7 @@ def get_recommender_video_for_kinopoisk(
         array_genres = random.sample(array_genres, 2)
 
     url: str = settings.recommender_system.kinopoisk.URL_SEARCH_UNIVERSAL_VIDEO.format(
-        limit
+        250
     )
 
     for genre in array_genres:
@@ -635,8 +653,9 @@ def get_recommender_video_for_kinopoisk(
     url += f"&rating.kp={rating}"
 
     array_recommender = requests.get(url=url, headers=HEADERS).json().get("docs")
+    random.shuffle(array_recommender)
 
-    return array_recommender
+    return array_recommender[:limit]
 
 
 def get_description_video_from_kinopoisk(data: Dict) -> str:
@@ -651,11 +670,13 @@ def get_description_video_from_kinopoisk(data: Dict) -> str:
     name = f'{data.get("name")}\n\n'
 
     array_genres = []
-    for genre in data.get("genres"):
-        array_genres.append(genre.get("name"))
+    if data.get("genres", 0):
+        for genre in data.get("genres"):
+            array_genres.append(genre.get("name"))
     array_countries = []
-    for country in data.get("countries"):
-        array_countries.append(country.get("name"))
+    if data.get("countries", 0):
+        for country in data.get("countries"):
+            array_countries.append(country.get("name"))
     if data.get("alternativeName", 0):
         name += f"Другое название: {data.get('alternativeName')}\n"
     if data.get("type", 0):

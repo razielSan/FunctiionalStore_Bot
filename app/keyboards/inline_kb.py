@@ -193,7 +193,12 @@ def get_button_choice_sorted_youtube_video():
                     text="по просмотрам",
                     callback_data="sort viewCount",
                 ),
+                InlineKeyboardButton(
+                    text="каналы",
+                    callback_data="sort channel",
+                ),
             ],
+
         ],
         resize_keyboard=True,
     )

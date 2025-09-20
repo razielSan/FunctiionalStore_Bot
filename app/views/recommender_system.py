@@ -9,6 +9,7 @@ from aiogram.types.input_file import FSInputFile
 from aiogram.fsm.context import FSMContext
 from aiogram.filters import StateFilter
 from aiogram.fsm.state import State, StatesGroup
+from aiogram.types import FSInputFile
 
 from keyboards.inline_kb import (
     get_button_recommender_system,
@@ -109,7 +110,7 @@ async def get_data_recominder(message: Message, state: FSMContext):
     kinopoisk = data["kinopoisk"]
 
     if kinopoisk == "name":
-        await message.answer("Идет состваление рекомендации.Ожидайте...")
+        await message.answer("Идет составление рекомендации.Ожидайте...")
         name = searches_for_videos_by_name_for_kinopoisk(name=message.text)
         if name.get("docs", 0):
             json_kinopoisk: Dict = name.get("docs")[0]
@@ -205,15 +206,31 @@ async def scrolls_through_the_list_of_recommendations(
         photo = recommender_list[int(count)]["poster"].get("url", 0)
 
     if photo:
-        await bot.edit_message_media(
-            media=InputMediaPhoto(media=photo, caption=description),
-            message_id=call.message.message_id,
-            chat_id=call.message.chat.id,
-            reply_markup=get_button_for_forward_or_back(
-                video_search_list=recommender_list,
-                count=int(count),
-            ),
-        )
+        try:
+
+            await bot.edit_message_media(
+                media=InputMediaPhoto(media=photo, caption=description),
+                message_id=call.message.message_id,
+                chat_id=call.message.chat.id,
+                reply_markup=get_button_for_forward_or_back(
+                    video_search_list=recommender_list,
+                    count=int(count),
+                ),
+            )
+        except Exception as err:
+            path: Path = Path(__file__).parent.parent
+            photo: str = os.path.join(path, f"static/img/none.png")
+
+            await bot.edit_message_media(
+                media=InputMediaPhoto(media=FSInputFile(photo), caption=description),
+                message_id=call.message.message_id,
+                chat_id=call.message.chat.id,
+                reply_markup=get_button_for_forward_or_back(
+                    video_search_list=recommender_list,
+                    count=int(count),
+                ),
+            )
+
     else:
         path: Path = Path(__file__).parent.parent
         photo: str = os.path.join(path, f"static/img/none.png")

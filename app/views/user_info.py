@@ -1,4 +1,6 @@
 import json
+import os
+from pathlib import Path
 
 from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove, FSInputFile
@@ -120,7 +122,6 @@ async def add_info_ip(message: Message, state: FSMContext):
                     url=settings.ip_info.ipapi.ULR_IP_INFO,
                     acces_key=settings.ip_info.ipapi.AccessKey,
                 )
-
                 await state.clear()
                 await bot.send_photo(
                     chat_id=message.chat.id,
@@ -128,6 +129,8 @@ async def add_info_ip(message: Message, state: FSMContext):
                     caption=data,
                     reply_markup=ReplyKeyboardRemove(),
                 )
+
+                os.remove(os.path.join(Path(__file__).parent.parent, "file.json"))
                 await main_user_info(message=message)
 
         else:
