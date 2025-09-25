@@ -198,7 +198,6 @@ def get_button_choice_sorted_youtube_video():
                     callback_data="sort channel",
                 ),
             ],
-
         ],
         resize_keyboard=True,
     )
@@ -247,7 +246,8 @@ def get_button_recommender_system_by_kinopoisk():
         inline_keyboard=[
             [
                 InlineKeyboardButton(
-                    text="По названию фильма", callback_data="kinopoisk_recommender name"
+                    text="По названию фильма",
+                    callback_data="kinopoisk_recommender name",
                 ),
             ],
         ],
@@ -261,7 +261,7 @@ def get_button_for_forward_or_back(
     count: int = 0,
     step: int = 1,
 ):
-    """Возвращает инлайн кнопки для прллистывания назад или вперед."""
+    """Возвращает инлайн кнопки для прoлистывания назад или вперед."""
 
     inline_kb = InlineKeyboardBuilder()
     if count == 0:
@@ -292,3 +292,15 @@ def get_button_for_forward_or_back(
                 )
             )
     return inline_kb.as_markup(resize_keyboard=True)
+
+
+def get_buttons_for_generating_passwords():
+    """Возвращает инлайн кнопки для генерации паролей."""
+
+    inline_kb = InlineKeyboardBuilder()
+    inline_kb.row(InlineKeyboardButton(text="Простой", callback_data="password simple"))
+    inline_kb.row(
+        InlineKeyboardButton(text="Сложный", callback_data="password difficult")
+    )
+
+    return inline_kb.as_markup(resize_markup=True)
