@@ -3,6 +3,8 @@ from typing import List
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
+from config import settings
+
 
 def get_button_is_weathre_forecast():
     """Возвращает инлайн кнопки для выбора варинтов прогноза погоды."""
@@ -298,9 +300,9 @@ def get_buttons_for_generating_passwords():
     """Возвращает инлайн кнопки для генерации паролей."""
 
     inline_kb = InlineKeyboardBuilder()
-    inline_kb.row(InlineKeyboardButton(text="Простой", callback_data="password simple"))
+    inline_kb.row(InlineKeyboardButton(text="Простой", callback_data=f"password {settings.password_generation.simple}"))
     inline_kb.row(
-        InlineKeyboardButton(text="Сложный", callback_data="password difficult")
+        InlineKeyboardButton(text="Сложный", callback_data=f"password {settings.password_generation.difficult}")
     )
 
     return inline_kb.as_markup(resize_markup=True)
