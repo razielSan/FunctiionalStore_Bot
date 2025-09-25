@@ -385,7 +385,8 @@ def get_image_description_by_immaga(
 
 
 def get_description_video_by_youtube(
-    name_video: str, sort: str,
+    name_video: str,
+    sort: str,
 ):
     """Возвращает список, в котором содержится описания каждого найденного видео.
 
@@ -716,3 +717,170 @@ def get_description_video_from_kinopoisk(data: Dict) -> str:
         name += f"{countries}\n"
 
     return name
+
+
+def get_generateing_simple_or_difficult_password(
+    password: str,
+    step: str = 3,
+) -> str:
+    """Возвращает сложный или простой пароль
+
+    Args:
+        step (str, optional): Шаг для выборки подряд идущих букв или цифр
+        password  (str): Тип пароля
+
+    Returns:
+        str: Возвращает пароль
+    """
+    flag: List[bool] = [True, False]
+    array_generating_password: List = []
+    if password == settings.password_generation.difficult:
+        for _ in range(10):
+            password: str = ""
+
+            # Первая Случайная генерация букв
+            words: str = random.choice(
+                settings.password_generation.keyboard_layout_english
+            )
+            current_flag: bool = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                words = words[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    words = words[::-1]
+                password += words
+            else:
+                password += random.choice(words) * step
+
+            #  Первая случайная генерация цифр
+            digits = settings.password_generation.digit
+            current_flag = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                digits = digits[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    digits = digits[::-1]
+                password += digits
+            else:
+                password += random.choice(digits) * step
+
+            # Вторая Случайная генерация букв
+            words: str = random.choice(
+                settings.password_generation.keyboard_layout_english
+            )
+            current_flag: bool = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                words = words[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    words = words[::-1]
+                password += words
+            else:
+                password += random.choice(words) * step
+
+            # Вторая случайная генерация цифр
+            digits = settings.password_generation.digit
+            current_flag = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                digits = digits[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    digits = digits[::-1]
+                password += digits
+            else:
+                password += random.choice(digits) * step
+
+            #Третья Случайная генерация букв
+            words: str = random.choice(
+                settings.password_generation.keyboard_layout_english
+            )
+            current_flag: bool = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                words = words[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    words = words[::-1]
+                password += words
+            else:
+                password += random.choice(words) * step
+
+            #  Третья случайная генерация цифр
+            digits: str = settings.password_generation.digit
+            current_flag = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                digits: str = digits[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    digits = digits[::-1]
+                password += digits
+            else:
+                password += random.choice(digits) * step
+            array_generating_password.append(password)
+
+        passwords: str = "\n".join(array_generating_password)
+        return passwords
+    elif password == settings.password_generation.simple:
+        for _ in range(10):
+            password: str = ""
+
+            #  Первая Случайная генерация букв
+            words: str = random.choice(
+                settings.password_generation.keyboard_layout_english
+            )
+            current_flag: bool = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                words = words[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    words = words[::-1]
+                password += words
+            else:
+                password += random.choice(words) * step
+
+            # случайная генерация цифр
+            digits = settings.password_generation.digit
+            current_flag = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                digits = digits[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    digits = digits[::-1]
+                password += digits
+            else:
+                password += random.choice(digits) * step
+
+            #  Вторая Случайная генерация букв
+            words: str = random.choice(
+                settings.password_generation.keyboard_layout_english
+            )
+            current_flag: bool = random.choice(flag)
+            if current_flag:
+                start: int = random.randrange(0, len(words) - step + 1)
+
+                words = words[start : start + step]
+                current_flag = random.choice(flag)
+                if current_flag:
+                    words = words[::-1]
+                password += words
+            else:
+                password += random.choice(words) * step
+
+            array_generating_password.append(password)
+        passwords: str = "\n".join(array_generating_password)
+        return passwords
