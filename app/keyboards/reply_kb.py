@@ -22,7 +22,8 @@ def get_start_button_bot():
                 KeyboardButton(text="Получить список прокси"),
             ],
             [
-                KeyboardButton(text="Рекомендательная система")
+                KeyboardButton(text="Рекомендательная система"),
+                KeyboardButton(text="Генерация паролей")
             ]
         ],
         resize_keyboard=True,
