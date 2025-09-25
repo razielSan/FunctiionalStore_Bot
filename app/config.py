@@ -105,6 +105,14 @@ class FindVideo(BaseModel):
     youtube: YoutubeAPI = YoutubeAPI()
 
 
+class PasswordGeneration(BaseModel):
+    """Класс для конфигурации генерации паролей."""
+    simple: str = "simple"
+    difficult: str = "difficult"
+    keyboard_layout_english: List = ["qwertyuiop", "asdfghjkl", "zxcvbnm", "qazwsxedcrfvtgbyhnujm"]
+    digit: str = "0123456789"
+
+
 class Settings(BaseSettings):
     """Настройки бота."""
 
@@ -254,6 +262,7 @@ class Settings(BaseSettings):
     proxies: Proxies = Proxies()
     ip_info: IpInfo = IpInfo()
     recommender_system: RecommenderSystem = RecommenderSystem()
+    password_generation: PasswordGeneration =  PasswordGeneration()
 
 
 settings = Settings()
