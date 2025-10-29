@@ -1,8 +1,7 @@
-import json
-
 import aiohttp
 import asyncio
 import traceback
+from typing import Dict
 
 from logging_handler.main import error_logging
 from settings.response import ResponseData
@@ -22,7 +21,7 @@ async def safe_read_response(resp):
         content_type = resp.headers.get("Content-Type", "").lower()
         if "application/json" in content_type:
             data = await resp.json()
-            return json.dumps(data, ensure_ascii=False, indent=2)
+            return data
         return await resp.text()
     except Exception:
         return "<no body>"
@@ -71,31 +70,56 @@ async def error_handler_for_the_website(
             data=data,
             headers=headers,
         ) as resp:
-            if resp.status == 403:
+            if resp.status in [403, 404]:
+
+                # Для удобного логгирования
+                url: str = str(resp.url)
+
+                # Тело ответа запроса
                 error_body = await safe_read_response(resp=resp)
+
+                # Формируем дефолтные сообщения
+                default_messages: Dict = {
+                    403: "Доступ к сайту запрещен",
+                    404: "Cервер не может найти запрошенный ресурс",
+                }
+
+                # Формируем ответ для пользователя
+                error_message_str: str = (
+                    error_body.get("message", default_messages[resp.status])
+                    if isinstance(error_body, dict)
+                    else default_messages[resp.status]
+                )
+
+                logg_error_str: str = str(error_body)[:500]
                 error_logging.error(
                     msg=settings.logging.ERROR_WEB_RESPONSE_MESSAGE.format(
                         method=method,
                         status=resp.status,
-                        url=resp.url,
-                        error_message=error_body[:500],
+                        url=url,
+                        error_message=logg_error_str,
                     )
                 )
 
                 return ResponseData(
                     status=resp.status,
-                    error="Доступ к сайту запрещен",
+                    error=error_message_str,
                     url=url,
                     method=method,
                 )
-            if resp.status != 200:
+
+            elif resp.status != 200:
+                # Для удобного логгирования
+                url: str = str(resp.url)
                 error_body = await safe_read_response(resp=resp)
+
+                logg_error_str: str = str(error_body)[:500]
                 error_logging.error(
                     msg=settings.logging.ERROR_WEB_RESPONSE_MESSAGE.format(
                         method=method,
                         status=resp.status,
-                        url=resp.url,
-                        error_message=error_body[:500],
+                        url=url,
+                        error_message=logg_error_str,
                     )
                 )
                 return ResponseData(
@@ -138,7 +162,7 @@ async def error_handler_for_the_website(
             )
         )
         return ResponseData(
-            error="Не удалось подлкючиться к сайтy",
+            error="Не удалось подлкючиться к сайту",
             status=0,
             url=url,
             method=method,
