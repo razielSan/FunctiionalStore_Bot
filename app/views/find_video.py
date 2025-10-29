@@ -144,7 +144,7 @@ async def finish_find_image(message: Message, state: FSMContext):
 
             await bot.send_message(
                 chat_id=message.chat.id,
-                text="Нажмите 'Завершить' или 'Отмена' чтобы закончить поиск видео",
+                text="Нажмите 'Отмена' чтобы закончить поиск видео",
                 reply_markup=get_cancel_button(),
             )
 
