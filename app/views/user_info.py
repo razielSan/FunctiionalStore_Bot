@@ -50,7 +50,7 @@ async def get_message_user_info(message: Message, state: FSMContext):
 async def cancel_user_info_handler(message: Message, state: FSMContext):
     """Работа с FSM IpInfo.Отменяет все действия."""
 
-    current_state = await state.get_data()
+    current_state: Dict = await state.get_data()
 
     if current_state is None:
         return
@@ -60,7 +60,11 @@ async def cancel_user_info_handler(message: Message, state: FSMContext):
         text="Сбор информации по ip отменен",
         reply_markup=ReplyKeyboardRemove(),
     )
-    await main_user_info(message=message)
+    await bot.send_message(
+        chat_id=message.chat.id,
+        text="Главное меню бота",
+        reply_markup=get_start_button_bot(),
+    )
 
 
 @router.callback_query(F.data.startswith("ip "))
@@ -148,6 +152,7 @@ async def add_info_ip(message: Message, state: FSMContext):
                     "узнать информацию в формате\n\n"
                     "192.168.0.3 - ip4\n"
                     "2001:0db8:85a3:0000:0000:8a2e:0370:7334 - ip6",
+                    reply_markup=get_cancel_button(),
                 )
             else:
 
@@ -189,6 +194,7 @@ async def add_info_ip(message: Message, state: FSMContext):
                         "узнать информацию в формате\n\n"
                         "192.168.0.3 - ip4\n"
                         "2001:0db8:85a3:0000:0000:8a2e:0370:7334 - ip6",
+                        reply_markup=get_cancel_button(),
                     )
 
         else:
@@ -199,4 +205,5 @@ async def add_info_ip(message: Message, state: FSMContext):
                 "котором хотите узнать информацию в формате\n\n"
                 "192.168.0.3 - ip4\n"
                 "2001:0db8:85a3:0000:0000:8a2e:0370:7334 - ip6",
+                reply_markup=get_cancel_button(),
             )
