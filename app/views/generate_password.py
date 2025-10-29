@@ -3,7 +3,11 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.filters import StateFilter
 
 from keyboards.inline_kb import get_buttons_for_generating_passwords
-from functions import get_generateing_simple_or_difficult_password
+from keyboards.reply_kb import get_start_button_bot
+
+from bot_functions.generate_password import get_generateing_simple_or_difficult_password
+from settings.response import ResponseData
+from extension import bot
 
 
 router: Router = Router(name=__name__)
@@ -24,8 +28,18 @@ async def get_generating_password(call: CallbackQuery):
     """Возвращает сгенерированный пароль."""
 
     _, password = call.data.split(" ")
-    passwords: str = get_generateing_simple_or_difficult_password(
-        step=3, password=password
+    passwords: ResponseData = await get_generateing_simple_or_difficult_password(
+        step=3, password_hard=password
     )
 
-    await call.message.answer(text=passwords)
+    await call.message.edit_reply_markup(
+        reply_markup=None,
+    )
+
+    await call.message.answer(text=passwords.message)
+
+    await bot.send_message(
+        chat_id=call.message.chat.id,
+        text="Главное меню бота",
+        reply_markup=get_start_button_bot(),
+    )
