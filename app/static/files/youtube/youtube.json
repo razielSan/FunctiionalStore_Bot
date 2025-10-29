@@ -1,0 +1,1712 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "5tfVAX4nf1ixKciMm_BzS9o86jc",
+    "nextPageToken": "CDIQAA",
+    "regionCode": "RU",
+    "pageInfo": {
+        "totalResults": 704,
+        "resultsPerPage": 50
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "uav2P5smavNpF2uKmVYhgMt2q1k",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "AZgshDAbrSI"
+            },
+            "snippet": {
+                "publishedAt": "2025-07-18T10:15:09Z",
+                "channelId": "UCWAIvx2yYLK_xTYD4F2mUNw",
+                "title": "Чем закончится война Палестины и Израиля? Михаил Магид: Особое мнение / 18.07.25",
+                "description": "Поддержать Живой гвоздь: с карт иностранных банков https://www.donationalerts.com/r/zhivgvozd Boosty: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/AZgshDAbrSI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/AZgshDAbrSI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/AZgshDAbrSI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Живой Гвоздь",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-07-18T10:15:09Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "pTNTZZuS8QpSybwKTjRFLImpxSM",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Ls6t-dqA8xA"
+            },
+            "snippet": {
+                "publishedAt": "2025-08-13T07:12:23Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "«Я хочу всю Газу, переселение и колонизацию». План Нетаньяху / Михаил Магид",
+                "description": "Это слова министра национальной безопасности Израиля и лидера израильской крайне правой партии «Оцма Йехудит» ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Ls6t-dqA8xA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Ls6t-dqA8xA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Ls6t-dqA8xA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-08-13T07:12:23Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "LebVQxIZVVak7McaQjoyOaLyzmQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "RympGy1ibik"
+            },
+            "snippet": {
+                "publishedAt": "2025-06-14T07:11:07Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "&quot;Вот возьму я острый меч и твоя головка с плеч!&quot; О новом этапе конфликта на Ближнем Востоке",
+                "description": "Сегодня наш гость Михаил Магид. Мы будем обсуждать начавшуюся воздушную операцию ВВС ЦАХАЛ против Ирана, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/RympGy1ibik/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/RympGy1ibik/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/RympGy1ibik/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-06-14T07:11:07Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "hDLnepUWNrhj1a-dRJptec1YnBE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "OFkt0tbj-sI"
+            },
+            "snippet": {
+                "publishedAt": "2025-06-23T07:53:08Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "&quot;ОНИ УБИЛИ ДОННИ!&quot; или как США бомбит Иран и что из этого может выйти для Ближнего Востока",
+                "description": "Сегодня наш гость Михаил Магид. Мы будем обсуждать начавшуюся воздушную операцию ВВС США против Ирана, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/OFkt0tbj-sI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/OFkt0tbj-sI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/OFkt0tbj-sI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-06-23T07:53:08Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "hSOdYYS3uLBeCO2edEab2N_Vcec",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "FDh7iesrL5o"
+            },
+            "snippet": {
+                "publishedAt": "2025-06-18T19:29:55Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Судьба Ирана и цели Израиля / Михаил Магид",
+                "description": "Иран и Израиль продолжают обмениваться ударами. Благодаря частичному захвату воздушного пространства Ирана ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/FDh7iesrL5o/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/FDh7iesrL5o/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/FDh7iesrL5o/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-06-18T19:29:55Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Z5O02yxtZUkb_gJVShmR-i17WPo",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "9p-BVkhhcx4"
+            },
+            "snippet": {
+                "publishedAt": "2024-06-30T20:23:19Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "Жёстко о внутренней ситуации в Ливане -- Михаил Магид  #простожесть",
+                "description": "Стрим на схожую тему https://youtube.com/live/7XNGcCeu0FU Канал Михаила Магида в ТГ https://t.me/michael_shraibman ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/9p-BVkhhcx4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/9p-BVkhhcx4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/9p-BVkhhcx4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-06-30T20:23:19Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "g5jqJYaI1s_dMdRdugTA6-bUa48",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "g9crgvuqRaM"
+            },
+            "snippet": {
+                "publishedAt": "2024-11-30T19:27:53Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Алеппо пал. Турецкие прокси и исламисты свергнут Асада? / Михаил Магид",
+                "description": "Объединение антиправительственных группировок во главе с «Хайят Тахрир аш-Шам»**, поддерживаемых Турцией, почти ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/g9crgvuqRaM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/g9crgvuqRaM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/g9crgvuqRaM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-11-30T19:27:53Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "2mEnd-Qlg8QtYkj81BdT27t9spE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "_pashv52NSo"
+            },
+            "snippet": {
+                "publishedAt": "2025-07-17T08:21:27Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "Султан Реджеп Эрдоган и его &quot;Блистательная Порта&quot; XXI века. К истории взлета и падения неоосманизма.",
+                "description": "100 лет назад была провозглашена Турецкая республика, положившая конец 500-летнему существованию Османской ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/_pashv52NSo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/_pashv52NSo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/_pashv52NSo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-07-17T08:21:27Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "cUMnttPkXqwx1-BUc5KAlrLb008",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "4DFjIm704MM"
+            },
+            "snippet": {
+                "publishedAt": "2023-11-14T19:59:15Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "ИРАН: План войны с Израилем. Помощь Китая и России. Революционная ситуация в стране // Михаил Магид",
+                "description": "Что происходит внутри государства, которое по сути является второй стороной конфликта в войне, развернувшейся на ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4DFjIm704MM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4DFjIm704MM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4DFjIm704MM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-11-14T19:59:15Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "jvCzBAqUk6L1Zj_4qUq6cAe8e7s",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "jStrS9L-Y0w"
+            },
+            "snippet": {
+                "publishedAt": "2023-03-17T11:43:00Z",
+                "channelId": "UCZv9xLUA0ATTACaf7oPDrxQ",
+                "title": "ОКНА. Новое иранское оружие. Гость: Михаил Магид",
+                "description": "Наш сайт - https://vestikavkaza.ru/ Telegram - https://t.me/vestnikkavkaza «ОКНА» - авторский проект ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/jStrS9L-Y0w/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/jStrS9L-Y0w/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/jStrS9L-Y0w/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "ВЕСТНИК КАВКАЗА",
+                "liveBroadcastContent": "none",
+                "publishTime": "2023-03-17T11:43:00Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "NMk3k73ppvdD6FRI8_sCj4PEp7Y",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "yq9G7HtGqSY"
+            },
+            "snippet": {
+                "publishedAt": "2024-07-01T15:51:51Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "Жёстко о будущем Нетаньяху -- Михаил Магид #простожесть",
+                "description": "Стрим на схожую тему https://youtube.com/live/7XNGcCeu0FU Канал Михаила Магида в ТГ https://t.me/michael_shraibman ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/yq9G7HtGqSY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/yq9G7HtGqSY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/yq9G7HtGqSY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-07-01T15:51:51Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "nRxrD-y_vugtAJCSPVq7LAZYpNo",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "bs5j6KpQg1s"
+            },
+            "snippet": {
+                "publishedAt": "2020-05-28T18:14:39Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Россия в Ливии (Михаил Магид и Борис Кагарлицкий)",
+                "description": "https://www.donationalerts.com/r/bkagarlitsky https://www.patreon.com/Rabkor Карта Сбербанка: 4279 3800 1452 3502 Яндекс ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/bs5j6KpQg1s/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/bs5j6KpQg1s/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/bs5j6KpQg1s/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-05-28T18:14:39Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Gk4FiKVFoUQfXHXC3jIwOHSuhzw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "WgRH9xX-Qq0"
+            },
+            "snippet": {
+                "publishedAt": "2025-04-16T13:08:11Z",
+                "channelId": "UCWAIvx2yYLK_xTYD4F2mUNw",
+                "title": "Переговоры США и Ирана. Оппозиция и протесты в Иране. Михаил Магид: Персонально ваш / 16.04.25",
+                "description": "Поддержать Живой гвоздь: с карт иностранных банков https://www.donationalerts.com/r/zhivgvozd Boosty: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/WgRH9xX-Qq0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/WgRH9xX-Qq0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/WgRH9xX-Qq0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Живой Гвоздь",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-04-16T13:08:11Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "8PXpTUWyoGkJEVrJOVsjYy8iM-c",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "eN2Ot5FqLoQ"
+            },
+            "snippet": {
+                "publishedAt": "2016-06-15T16:41:46Z",
+                "channelId": "UCds9nPtBm5yYFjUMH1JVRzA",
+                "title": "Михаил Магид о беспорядках в Казахстане",
+                "description": "Фрагмент заседания Политклуба «Росбалта» на тему: «Будет ли усилено присутствие России в Центральной Азии после ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/eN2Ot5FqLoQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/eN2Ot5FqLoQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/eN2Ot5FqLoQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Росбалт",
+                "liveBroadcastContent": "none",
+                "publishTime": "2016-06-15T16:41:46Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "xcMFBFR01bV0uWV2-7ALgVvPshw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "JBUT5k2MsFA"
+            },
+            "snippet": {
+                "publishedAt": "2015-11-02T09:23:22Z",
+                "channelId": "UCds9nPtBm5yYFjUMH1JVRzA",
+                "title": "Михаил Магид о последствиях для России в связи с ее участием в войне в Сирии.",
+                "description": "Фрагмент заседания политклуба Росбалт на тему: \"Возможность создания новых военно-политических альянсов на ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/JBUT5k2MsFA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/JBUT5k2MsFA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/JBUT5k2MsFA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Росбалт",
+                "liveBroadcastContent": "none",
+                "publishTime": "2015-11-02T09:23:22Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "hTKBev1lLwPCI8yRZJAsXnsJn4Q",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "GbERrNmXDZY"
+            },
+            "snippet": {
+                "publishedAt": "2025-06-09T13:08:24Z",
+                "channelId": "UCWAIvx2yYLK_xTYD4F2mUNw",
+                "title": "Как Грета Тунберг помогает Газе. Протесты в Европе. Роль Трампа в войне на Ближнем Востоке. Магид",
+                "description": "Поддержать Живой гвоздь: с карт иностранных банков https://www.donationalerts.com/r/zhivgvozd Boosty: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/GbERrNmXDZY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/GbERrNmXDZY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/GbERrNmXDZY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Живой Гвоздь",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-06-09T13:08:24Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "hVHFKh2i5W1iEnnFWugfuwZVPpI",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "dbZcNKtmd_I"
+            },
+            "snippet": {
+                "publishedAt": "2016-11-01T14:00:07Z",
+                "channelId": "UCds9nPtBm5yYFjUMH1JVRzA",
+                "title": "Михаил Магид о штурме Мосула",
+                "description": "Расклад сил перед решающей битвой с \"Исламским государством\" (террористическая организация, запрещенная в РФ) в ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/dbZcNKtmd_I/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/dbZcNKtmd_I/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/dbZcNKtmd_I/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Росбалт",
+                "liveBroadcastContent": "none",
+                "publishTime": "2016-11-01T14:00:07Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "rXbv3AHgmZqzgmAKeh2j0ZlrSaA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Q3BmBBplxhc"
+            },
+            "snippet": {
+                "publishedAt": "2022-12-31T13:28:55Z",
+                "channelId": "UCvJZyAfWreTF1eFGA3qpdLQ",
+                "title": "Культурный дневник - Культурный дневник: художники Михаил Скуляри и Вацлав Магид - 18 августа, 2020",
+                "description": "Художники Михаил Скуляри и Вацлав Магид Episode link: https://play.headliner.app/episode/12356631?utm_source=youtube.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Q3BmBBplxhc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Q3BmBBplxhc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Q3BmBBplxhc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Радио Свобода Live",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-12-31T13:28:55Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "-6XhFGxqchbAR6cfpcINM_YRS1c",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "D_zDl9qnSEE"
+            },
+            "snippet": {
+                "publishedAt": "2024-12-16T13:07:06Z",
+                "channelId": "UCWAIvx2yYLK_xTYD4F2mUNw",
+                "title": "Почему рухнул режим Асада? Будущее Сирии. Михаил Магид: Персонально ваш / 16.12.24",
+                "description": "Поддержать Живой гвоздь: с карт иностранных банков https://www.donationalerts.com/r/zhivgvozd Boosty: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/D_zDl9qnSEE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/D_zDl9qnSEE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/D_zDl9qnSEE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Живой Гвоздь",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-12-16T13:07:06Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "J_b2wB9-0B9Rjs1U2gLEpTZ2KI8",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "U5rwGxkiAYA"
+            },
+            "snippet": {
+                "publishedAt": "2016-03-29T15:23:43Z",
+                "channelId": "UCZv9xLUA0ATTACaf7oPDrxQ",
+                "title": "Михаил Магид о причинах  вывода войск России из Сирии",
+                "description": "http://www.vestikavkaza.ru/video/",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/U5rwGxkiAYA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/U5rwGxkiAYA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/U5rwGxkiAYA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "ВЕСТНИК КАВКАЗА",
+                "liveBroadcastContent": "none",
+                "publishTime": "2016-03-29T15:23:43Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "EfL4ScHR-adxOqCFKgHn0uTuBig",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "O3IzF2wd-Fc"
+            },
+            "snippet": {
+                "publishedAt": "2021-09-16T06:53:20Z",
+                "channelId": "UCOoNbUFADKLWYvzUuMz0g0Q",
+                "title": "В гостях Михаил Магид",
+                "description": "Поддержка Канала - https://www.donationalerts.com/r/metaconquista Сайт издательства РТП: https://www.rtpbooks.info/ ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/O3IzF2wd-Fc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/O3IzF2wd-Fc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/O3IzF2wd-Fc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Метаконкиста",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-09-16T06:53:20Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "Fw-TNktjG5R9jlR0qOOaxU39gg0",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "YouGo2JTjZQ"
+            },
+            "snippet": {
+                "publishedAt": "2020-09-25T18:12:19Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Коррупция в Израиле  (Михаил Магид, Борис Кагарлицкий)",
+                "description": "Задать вопрос на стриме - https://www.donationalerts.com/r/bkagarlitsky https://www.patreon.com/Rabkor Карта Сбербанка: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/YouGo2JTjZQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/YouGo2JTjZQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/YouGo2JTjZQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-09-25T18:12:19Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "DLiG07BfKroJmiSJFqftG3P0Te8",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "9Xvj6nb3aVA"
+            },
+            "snippet": {
+                "publishedAt": "2024-10-18T19:14:23Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Израиль перекраивает Ближний Восток / Михаил Магид",
+                "description": "Израиль убил главу ХАМАС Яхью Синвара. Недавно было уничтожено практически все руководство Хезболлы. Рейтинги ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/9Xvj6nb3aVA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/9Xvj6nb3aVA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/9Xvj6nb3aVA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-10-18T19:14:23Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "fDgT9Mp9dZ-CtRMv-DHUrTNV2mU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "xGunobts4Nk"
+            },
+            "snippet": {
+                "publishedAt": "2021-10-11T08:28:26Z",
+                "channelId": "UCZv9xLUA0ATTACaf7oPDrxQ",
+                "title": "«ОКНА». К чему приведёт ирано-азербайджанское противостояние? Гость: Михаил Магид",
+                "description": "Наш сайт - https://vestikavkaza.ru/ «ОКНА» - авторская аналитическая программа Фархада Ибрагимова, в которой гости ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/xGunobts4Nk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/xGunobts4Nk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/xGunobts4Nk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "ВЕСТНИК КАВКАЗА",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-10-11T08:28:26Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "dQ40hBjWSltD4G5viQM-qo6LfGU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "PQK2wuvSkgw"
+            },
+            "snippet": {
+                "publishedAt": "2025-02-26T13:08:58Z",
+                "channelId": "UCWAIvx2yYLK_xTYD4F2mUNw",
+                "title": "Обстановка на Ближнем Востоке. Кто примет беженцев из Палестины? Израиль VS ХАМАС. Михаил Магид",
+                "description": "Поддержать Живой гвоздь: с карт иностранных банков https://www.donationalerts.com/r/zhivgvozd Boosty: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/PQK2wuvSkgw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/PQK2wuvSkgw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/PQK2wuvSkgw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Живой Гвоздь",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-02-26T13:08:58Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "jtii-PSd3n8-XOcVQc7mcPeA5oI",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "riVt_dqxd9k"
+            },
+            "snippet": {
+                "publishedAt": "2024-07-01T10:12:56Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "Жёстко о кольце фронтов вокруг Израиля -- Михаил Магид  #простожесть",
+                "description": "Стрим на схожую тему https://youtube.com/live/7XNGcCeu0FU Канал Михаила Магида в ТГ https://t.me/michael_shraibman ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/riVt_dqxd9k/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/riVt_dqxd9k/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/riVt_dqxd9k/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-07-01T10:12:56Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "bEO45grt9NQJ-o-EK5kpsLE30sk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "VSZKgyc1muI"
+            },
+            "snippet": {
+                "publishedAt": "2024-04-08T20:07:31Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "ИЗРАИЛЬ-ПАЛЕСТИНА: Информационная война и возможность диалога / ВАХШТАЙН*, МАГИД",
+                "description": "При каждом обострении израильско-палестинского конфликта в русскоязычном медиаполе разгораются непримиримые ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/VSZKgyc1muI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/VSZKgyc1muI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/VSZKgyc1muI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-04-08T20:07:31Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "2YfaSgsfcwip3sKNBb1WEfPBZ9U",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "CjKagI-KCdk"
+            },
+            "snippet": {
+                "publishedAt": "2017-09-20T12:52:50Z",
+                "channelId": "UCR5RRnH0SSaHQD323RyZoKg",
+                "title": "В Архангельске арестованы  Михаил Магид и  Константин Кузнецов",
+                "description": "Два месяца в СИЗО проведут руководитель Соловецкого многофункционального центра Михаил Магид и гендиректор ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/CjKagI-KCdk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/CjKagI-KCdk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/CjKagI-KCdk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "СУ СК по Архангельской области и НАО",
+                "liveBroadcastContent": "none",
+                "publishTime": "2017-09-20T12:52:50Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "JIAXmt4qP2pLNyWw0v93paJDp3g",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "y0EbSPUQI7A"
+            },
+            "snippet": {
+                "publishedAt": "2021-09-12T15:28:20Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Будущее Афганистана (Михаил Балбус, Александр Рыбин, Михаил Магид)",
+                "description": "Смена власти в Афганистане. Уход США из Афганистана. Как изменится геополитическая карта региона? Насколько все ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/y0EbSPUQI7A/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/y0EbSPUQI7A/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/y0EbSPUQI7A/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-09-12T15:28:20Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "ILtKTKoQdqNB-uC4X8BEuMRZupE",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "nkukbUqFXtc"
+            },
+            "snippet": {
+                "publishedAt": "2025-05-07T06:55:15Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Израиль собирается удерживать Газу, ударил по Сирии и Йемену / Михаил Магид",
+                "description": "Нетаньяху вновь собирается втянуть страну в кровавую авантюру. Израиль призывает резервистов, чтобы войти и ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/nkukbUqFXtc/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/nkukbUqFXtc/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/nkukbUqFXtc/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-05-07T06:55:15Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "NoIjA5ZfONiZbqMeorpcxD4awZU",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "27BiiP-HwbE"
+            },
+            "snippet": {
+                "publishedAt": "2025-01-16T18:42:33Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Израиль и ХАМАС - война или мир ? / Михаил Магид",
+                "description": "15 января была согласована сделка о перемирии между Израилем и Хамас. В соглашении 8 глав и 20 пунктов, включая ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/27BiiP-HwbE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/27BiiP-HwbE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/27BiiP-HwbE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-01-16T18:42:33Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "dLiaE65WMLlbgI2aRkegiks0aAs",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "G9GNn9RlCCo"
+            },
+            "snippet": {
+                "publishedAt": "2024-08-05T19:43:11Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "Жёстко об уязвимости Ирана в грядущей войне. Михаил Магид. #простожесть",
+                "description": "Наш Телеграм канал https://t.me/+_Ez8swjQMWs2Y2Uy ✓ Задать вопрос с донатом: https://new.donatepay.ru/@red_uncles ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/G9GNn9RlCCo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/G9GNn9RlCCo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/G9GNn9RlCCo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-08-05T19:43:11Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "34mz2J_ESHiLZu44-BV7YF5e_co",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "NZv_SpJvMIg"
+            },
+            "snippet": {
+                "publishedAt": "2024-07-07T07:18:23Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Новый президент Ирана: этнические меньшинства выбрали либерала / Михаил Магид",
+                "description": "6 июля во втором туре выборов в Иране новым президентом стал Масуд Пезешкиан — кардиохирург и ветеран ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/NZv_SpJvMIg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/NZv_SpJvMIg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/NZv_SpJvMIg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-07-07T07:18:23Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "NL-6f3DiEVTj0wq0wTEZW93vLnw",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "AiXKp7aTyVg"
+            },
+            "snippet": {
+                "publishedAt": "2025-02-06T19:19:06Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Сделка Трампа — Ближний Восток без Палестины? / Михаил Магид",
+                "description": "На совместной пресс-конференции с Нетаньяху Трамп предложил выселить всех палестинцев из Сектора Газа, а это ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/AiXKp7aTyVg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/AiXKp7aTyVg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/AiXKp7aTyVg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-02-06T19:19:06Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "274u_RbCM6sKFVoWdzrbRVjhEtQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "iJoJzakrV7w"
+            },
+            "snippet": {
+                "publishedAt": "2025-06-28T08:24:42Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "Вверх по лестнице, ведущей вниз. Феномен братьев Стругацких: от научного оптимизма до полного краха",
+                "description": "Сегодня наш гость Михаил Магид. Мы будем обсуждать как научная или \"твердая\" фантастика молодых Стругацких ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/iJoJzakrV7w/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/iJoJzakrV7w/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/iJoJzakrV7w/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-06-28T08:24:42Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "HoG7721GJDSyDEawr0Rnd26TPlk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "cK5cqEuWXBQ"
+            },
+            "snippet": {
+                "publishedAt": "2021-06-13T15:40:40Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Израиль: конец эры Нетаньяху (Михаил Балбус, Михаил Магид)",
+                "description": "Как меняется Ближний Восток. К чему привела Вторая Арабская весна? Как евреи и палестинцы разделят власть в ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/cK5cqEuWXBQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/cK5cqEuWXBQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/cK5cqEuWXBQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-06-13T15:40:40Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "AWCX-5OYg9vhYqSNg2TVIjH4OSA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "xgY9iBqn6aA"
+            },
+            "snippet": {
+                "publishedAt": "2022-10-26T10:15:51Z",
+                "channelId": "UCZv9xLUA0ATTACaf7oPDrxQ",
+                "title": "Политика Тегерана в отношении Баку и Еревана. Гость: Михаил Магид",
+                "description": "Наш сайт - https://vestikavkaza.ru/ Telegram - https://t.me/vestnikkavkaza «ОКНА» - авторский проект ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/xgY9iBqn6aA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/xgY9iBqn6aA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/xgY9iBqn6aA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "ВЕСТНИК КАВКАЗА",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-10-26T10:15:51Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "eyhUqTOpJVuoOe0TIx89ENv70KY",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "wwUfoGqWLls"
+            },
+            "snippet": {
+                "publishedAt": "2024-09-18T19:06:50Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Израиль готовит вторжение в Ливан? / Михаил Магид",
+                "description": "Вчера в Ливане взорвались одновременно сразу несколько тысяч пейджеров. Это оказалась операция Моссада против ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/wwUfoGqWLls/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/wwUfoGqWLls/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/wwUfoGqWLls/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-09-18T19:06:50Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "GfPSBy2qMdDRLk6jVWRr0KCVLq4",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Yunin1xwnMA"
+            },
+            "snippet": {
+                "publishedAt": "2024-05-20T19:17:03Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Ближний Восток: крушение для Раиси, ордер МУС для Нетаньяху / Михаил Магид",
+                "description": "Сегодня стало известно, что президент Ирана Ибрагим Раиси погиб при падении вертолета. Он был организатором ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Yunin1xwnMA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Yunin1xwnMA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Yunin1xwnMA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-05-20T19:17:03Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "mGZf11L_sMTyQQXAcK9ecIEWG58",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "zE1GxE1UbH4"
+            },
+            "snippet": {
+                "publishedAt": "2025-05-15T07:29:59Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Курды договорились с Эрдоганом? Трамп лишает Израиль поддержки США? Хафтар наступает? / Михаил Магид",
+                "description": "Рабочая партия Курдистана откликнулась на призыв Абдуллы Оджалана и согласилась самораспуститься, перейдя на ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/zE1GxE1UbH4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/zE1GxE1UbH4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/zE1GxE1UbH4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-05-15T07:29:59Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "r8Hh3OkFzVos1kvRJUNtRsmTW1k",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "kKJrwemsXA0"
+            },
+            "snippet": {
+                "publishedAt": "2025-08-09T00:10:00Z",
+                "channelId": "UCWAIvx2yYLK_xTYD4F2mUNw",
+                "title": "Рейтинг ХАМАС. Протесты в Украине и поддержка Зеленского. Лукавая цифра",
+                "description": "Поддержать Живой гвоздь: с карт иностранных банков https://www.donationalerts.com/r/zhivgvozd Boosty: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/kKJrwemsXA0/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/kKJrwemsXA0/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/kKJrwemsXA0/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Живой Гвоздь",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-08-09T00:10:00Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "WLS96brg6cK9f04A2TdXyNHzqgA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "qDevXFpSPdQ"
+            },
+            "snippet": {
+                "publishedAt": "2020-03-06T18:42:56Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Русско-турецкий конфликт. Опять? (Михаил Магид, Борис Кагарлицкий)",
+                "description": "Наш канал развивается благодаря помощи наших зрителей! Будем крайне благодарны вашим пожертвованиям на ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/qDevXFpSPdQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/qDevXFpSPdQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/qDevXFpSPdQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-03-06T18:42:56Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "oMEWzlOMOcrXefntzrQ7fAZuBZI",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Lymv4jpRiN8"
+            },
+            "snippet": {
+                "publishedAt": "2024-05-08T19:21:53Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Авантюра Израиля в Рафахе / Артем Кирпиченок, Михаил Магид",
+                "description": "Несмотря на давление администрации Байдена, Израиль предпринял первые шаги по вторжению в Рафах. 6 мая ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Lymv4jpRiN8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Lymv4jpRiN8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Lymv4jpRiN8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-05-08T19:21:53Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "hkrFRhDILryTo2OV6O8kdOnuv60",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "DWF3F0xEjMQ"
+            },
+            "snippet": {
+                "publishedAt": "2024-12-08T19:03:30Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Сирия после Асада. Судьба курдов / Никита Смагин, Михаил Магид",
+                "description": "Великая революция победила. Тиран Башар аль-Асад свергнут. Все заключенные были освобождены из тюрем Дамаска.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DWF3F0xEjMQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DWF3F0xEjMQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DWF3F0xEjMQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-12-08T19:03:30Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "f2TTfWtNHdeRTqCCqEaPUqz3gyk",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "K0wwk_2n9aE"
+            },
+            "snippet": {
+                "publishedAt": "2025-03-20T08:46:36Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Газу снова бомбят; Арест лидера оппозиции, мэра Стамбула в Турции / Михаил Магид, Артем Кирпиченок",
+                "description": "Сегодня утром в Стамбуле задержан мэр города Экрем Имамоглу, представляющий оппозиционную Республиканскую ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/K0wwk_2n9aE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/K0wwk_2n9aE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/K0wwk_2n9aE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-03-20T08:46:36Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "I3XVhf2dJOWZeFKA1Zgv6_QxA1E",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "LKa1DGjBH_E"
+            },
+            "snippet": {
+                "publishedAt": "2025-03-13T07:24:39Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Восстание алавитов в Сирии / Михаил Магид",
+                "description": "6 марта в Сирии, в западных провинциях Латакия и Тартус, населенных преимущественно алавитами и христианами, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/LKa1DGjBH_E/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/LKa1DGjBH_E/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/LKa1DGjBH_E/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-03-13T07:24:39Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "9_REpPfas3gATe73-7MIDgobR6o",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "0rFaqkfgWgs"
+            },
+            "snippet": {
+                "publishedAt": "2025-03-04T19:46:50Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Курды в Турции прекращают герилью, Израиль захватывает юг Сирии / Михаил Магид",
+                "description": "Приговоренный к пожизненному сроку лидер Рабочей партии Курдистана (РПК) призвал своих соратников в Турции ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/0rFaqkfgWgs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/0rFaqkfgWgs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/0rFaqkfgWgs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-03-04T19:46:50Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "W9U-W4vj7D98yhhcp89ARSUX9aA",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "V0nnlEGWnmk"
+            },
+            "snippet": {
+                "publishedAt": "2021-12-18T16:41:04Z",
+                "channelId": "UCaQYwG32jj2Mip1X6X0Ib6w",
+                "title": "Ливия не просто разделена на восток и запад, она поделена на разные группировки, - Магид",
+                "description": "Наш сайт: https://nezavisim.tv/ Прямой эфир проекта \"Независимые\": https://nezavisim.tv/ Facebook проекта: ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/V0nnlEGWnmk/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/V0nnlEGWnmk/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/V0nnlEGWnmk/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Независимые",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-12-18T16:41:04Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "9cUl-LLl8Cw7jCVh996sMP4ljCQ",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "DoDqOs2KV7E"
+            },
+            "snippet": {
+                "publishedAt": "2024-01-22T18:22:05Z",
+                "channelId": "UCYDuWqDwzAFG4xrI5uJEWfw",
+                "title": "Ползучие войны Ближнего Востока: Йемен, Израиль, Палестина / Михаил Магид, Борис Кагарлицкий*",
+                "description": "НАСТОЯЩИЙ МАТЕРИАЛ (ИНФОРМАЦИЯ) ПРОИЗВЕДЕН, РАСПРОСТРАНЕН И (ИЛИ) НАПРАВЛЕН ИНОСТРАННЫМ ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/DoDqOs2KV7E/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/DoDqOs2KV7E/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/DoDqOs2KV7E/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Рабкор",
+                "liveBroadcastContent": "none",
+                "publishTime": "2024-01-22T18:22:05Z"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "hNLf7hjvZBwmxCQgMORM0qLZoY8",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "76zvDCeKrgg"
+            },
+            "snippet": {
+                "publishedAt": "2025-06-12T08:43:56Z",
+                "channelId": "UCxpWbW_eYYjOnqznfU11uBg",
+                "title": "Тун-балалайка: мнимое единство всех евреев мира так ли это или это иллюзия напополам с предрассудком",
+                "description": "Сегодня наш гость Михаил Магид. Мы будем обсуждать резко проявивший себя антисионизм значительной части евреев ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/76zvDCeKrgg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/76zvDCeKrgg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/76zvDCeKrgg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "КД (Красные Дядьки)",
+                "liveBroadcastContent": "none",
+                "publishTime": "2025-06-12T08:43:56Z"
+            }
+        }
+    ]
+}

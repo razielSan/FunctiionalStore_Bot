@@ -1,0 +1,118 @@
+{
+    "docs": [
+        {
+            "id": 32928,
+            "name": "Уве Болл",
+            "enName": "Uwe Boll",
+            "photo": "https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8f0ff087-e4a7-4979-90d4-f8ffc49a7824/orig",
+            "sex": "Мужской",
+            "growth": 173,
+            "birthday": "1965-06-22T00:00:00.000Z",
+            "death": "",
+            "age": 60
+        },
+        {
+            "id": 1382443,
+            "name": "Уве",
+            "enName": "Uwe",
+            "photo": "",
+            "sex": "Мужской",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 1916428,
+            "name": "Уве Пеннер",
+            "enName": "Uwe Penner",
+            "photo": "",
+            "sex": "",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 2279167,
+            "name": "Уве Хунольд",
+            "enName": "Uwe Hunold",
+            "photo": "",
+            "sex": "Мужской",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 2250939,
+            "name": "Уве Херрманн",
+            "enName": "Uwe Herrmann",
+            "photo": "",
+            "sex": "",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 1259074,
+            "name": "Уве фон Арго",
+            "enName": "Uwe von Argo",
+            "photo": "",
+            "sex": "Мужской",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 2177259,
+            "name": "Уве Клут",
+            "enName": "Uwe Kluth",
+            "photo": "",
+            "sex": "",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 1297110,
+            "name": "Уве Маше",
+            "enName": "Uwe Hasche",
+            "photo": "",
+            "sex": "Мужской",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 1295083,
+            "name": "Уве Старк",
+            "enName": "Uwe Stark",
+            "photo": "",
+            "sex": "Мужской",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        },
+        {
+            "id": 1480112,
+            "name": "Уве Ф. Дювал",
+            "enName": "Uwe F. Duval",
+            "photo": "",
+            "sex": "",
+            "growth": 0,
+            "birthday": "",
+            "death": "",
+            "age": 0
+        }
+    ],
+    "total": 444,
+    "limit": 10,
+    "page": 1,
+    "pages": 45
+}

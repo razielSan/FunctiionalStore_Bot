@@ -1,0 +1,833 @@
+{
+    "docs": [
+        {
+            "id": 39423,
+            "name": "Олимпия",
+            "alternativeName": "Olympia 1. Teil - Fest der Völker",
+            "enName": "",
+            "type": "movie",
+            "year": 1938,
+            "description": "История олимпиад от Античности до 1936 года от Лени Рифеншталь. Спорт, как средство формирования человеческого тела, красота которого является неотрывной частью общей красоты природы. Режиссеру и операторам были предоставлены для съемок всевозможные средства: подводные камеры, дирижабли, воздушные шары и т.д.",
+            "shortDescription": "",
+            "movieLength": 121,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": 0,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [
+                {
+                    "name": "Олимпия"
+                },
+                {
+                    "name": "Olympia 1. Teil - Fest der Völker"
+                },
+                {
+                    "name": "Apoteosi di Olimpia parte 1",
+                    "language": "IT",
+                    "type": null
+                },
+                {
+                    "name": "Les Dieux du stade - Le Festival des Nations",
+                    "language": "FR",
+                    "type": null
+                },
+                {
+                    "name": "Olympia",
+                    "language": "ES",
+                    "type": null
+                },
+                {
+                    "name": "Olympia 1.Teil",
+                    "language": "DE",
+                    "type": null
+                },
+                {
+                    "name": "올림피아 1부: 민족의 제전",
+                    "language": "KR",
+                    "type": null
+                },
+                {
+                    "name": "De Goden van het Stadion",
+                    "language": "NL",
+                    "type": null
+                },
+                {
+                    "name": "Berlinolympiaden 1",
+                    "language": "NO",
+                    "type": null
+                },
+                {
+                    "name": "Olympia 1. Teil - Götter des Stadions",
+                    "language": "DE",
+                    "type": null
+                },
+                {
+                    "name": "De goden van het stadion",
+                    "language": "BE",
+                    "type": "Flemish TV Title"
+                },
+                {
+                    "name": "Les dieux du stade",
+                    "language": "BE",
+                    "type": "French Title"
+                },
+                {
+                    "name": "Les dieux du stade",
+                    "language": "FR",
+                    "type": "Poster Title"
+                },
+                {
+                    "name": "Olympia - Fest der Völker - Erster Film von den Olympischen Spielen Berlin 1936",
+                    "language": "DE",
+                    "type": "Poster Title"
+                },
+                {
+                    "name": "XI Olympias",
+                    "language": "GR",
+                    "type": "transliteration"
+                },
+                {
+                    "name": "Olimpia, 1. rész - Népek ünnepe",
+                    "language": "HU",
+                    "type": null
+                },
+                {
+                    "name": "Olimpia",
+                    "language": "IT",
+                    "type": "alternative spelling"
+                },
+                {
+                    "name": "Minzoku no saiten - Olympia Dai ichi bu",
+                    "language": "JP",
+                    "type": "Transliterated Theatrical Title"
+                },
+                {
+                    "name": "Olimpiada, część I - Święto narodów",
+                    "language": "PL",
+                    "type": "Long Title"
+                },
+                {
+                    "name": "Olympia, Ídolos do Estádio",
+                    "language": "PT",
+                    "type": "alternative title"
+                },
+                {
+                    "name": "Olympia: The Film of the XI. Olympic Games Berlin, 1936",
+                    "language": "GB",
+                    "type": null
+                },
+                {
+                    "name": "The Olympiad",
+                    "language": "US",
+                    "type": null
+                }
+            ],
+            "externalId": {
+                "imdb": "tt0030522",
+                "tmdb": 677,
+                "kpHD": null
+            },
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1704946/2ee988fa-9295-4069-9660-5b400efd491d/600x900",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1704946/2ee988fa-9295-4069-9660-5b400efd491d/300x450"
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 8.022,
+                "imdb": 7.7,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "votes": {
+                "kp": 2680,
+                "imdb": 5552,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "документальный"
+                },
+                {
+                    "name": "спорт"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Германия"
+                }
+            ],
+            "releaseYears": []
+        },
+        {
+            "id": 39424,
+            "name": "Олимпия 2",
+            "alternativeName": "Olympia 2. Teil - Fest der Schönheit",
+            "enName": "",
+            "type": "movie",
+            "year": 1938,
+            "description": "Документальный фильм об Олимпийских играх 1936 года в Берлине, снятый для пропаганды нацизма.",
+            "shortDescription": "",
+            "movieLength": 96,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [
+                {
+                    "name": "Олимпия 2"
+                },
+                {
+                    "name": "Olympia 2. Teil - Fest der Schönheit"
+                },
+                {
+                    "name": "Les Dieux du stade - Le Festival de la Beauté",
+                    "language": "FR",
+                    "type": null
+                },
+                {
+                    "name": "Olympia - 2. Teil",
+                    "language": "DE",
+                    "type": null
+                },
+                {
+                    "name": "올림피아 2부: 미의 제전",
+                    "language": "KR",
+                    "type": null
+                }
+            ],
+            "externalId": {
+                "imdb": "tt0030523",
+                "tmdb": 685,
+                "kpHD": null
+            },
+            "logo": {
+                "url": null
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1777765/68fbdc38-2dc7-4df8-ba56-e1b61c3757e0/600x900",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1777765/68fbdc38-2dc7-4df8-ba56-e1b61c3757e0/300x450"
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 7.917,
+                "imdb": 7.6,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "votes": {
+                "kp": 1376,
+                "imdb": 4562,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "документальный"
+                },
+                {
+                    "name": "спорт"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Германия"
+                }
+            ],
+            "releaseYears": []
+        },
+        {
+            "id": 50412,
+            "name": "Олимпия",
+            "alternativeName": "Olympia",
+            "enName": "",
+            "type": "movie",
+            "year": 1998,
+            "description": "Олимпия Мирафлорес — мексиканская провинциальная «звезда» телевизионных «мыльных опер». Ей страстная мечта — стать олимпийской чемпионкой по метанию копья. Для осуществления своего желания она вплавь пересекает Рио-Гранде на глазах потрясенного менеджера Эда.\n\nВ США Олимпия встречает Билли, который работает уличной «живой рекламой» третьесортной забегаловки. Он становится другом и тренером Олимпии, и с его помощью она открывает для себя дорогу в большой спорт.",
+            "shortDescription": "",
+            "movieLength": 76,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": 16,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [
+                {
+                    "name": "Олимпия",
+                    "language": "RU",
+                    "type": null
+                }
+            ],
+            "externalId": {
+                "kpHD": null,
+                "imdb": "tt0147111",
+                "tmdb": 477032
+            },
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1946459/8ed8e115-6585-4157-b9fe-9b0529961833/600x900",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1946459/8ed8e115-6585-4157-b9fe-9b0529961833/300x450"
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 0,
+                "imdb": 7.3,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "votes": {
+                "kp": 18,
+                "imdb": 73,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "мелодрама"
+                },
+                {
+                    "name": "комедия"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "США"
+                }
+            ],
+            "releaseYears": []
+        },
+        {
+            "id": 1432824,
+            "name": "Олимпия Киклос",
+            "alternativeName": "Extra Olympia Kyklos",
+            "enName": "Extra Olympia Kyklos",
+            "type": "anime",
+            "year": 2020,
+            "description": "Деметрий — робкий и добрый древнегреческий вазописец, который не любит спорт и соревнования. Однажды ему приходится придумывать игру, чтобы сразиться с главой соседнего города и спасти свою деревню. Когда он прячется в большой вазе, молния бьёт прямо в неё и переносит его в Токио 1964 года, аккурат во время летних Олимпийских игр.",
+            "shortDescription": "",
+            "movieLength": 0,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": 5,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 4,
+            "status": "completed",
+            "names": [
+                {
+                    "name": "Extra Olympia Kyklos",
+                    "language": "US",
+                    "type": "Extra Olympia Kyklos"
+                }
+            ],
+            "externalId": {
+                "imdb": "tt12094170",
+                "tmdb": 102282,
+                "kpHD": null
+            },
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/4303601/5d67854c-5ee2-429f-9e9c-1fd0934b6039/600x900",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/4303601/5d67854c-5ee2-429f-9e9c-1fd0934b6039/300x450"
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 0,
+                "imdb": 7.2,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "votes": {
+                "kp": 37,
+                "imdb": 75,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "аниме"
+                },
+                {
+                    "name": "мультфильм"
+                },
+                {
+                    "name": "спорт"
+                },
+                {
+                    "name": "комедия"
+                },
+                {
+                    "name": "фэнтези"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Япония"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2020,
+                    "end": 2020
+                }
+            ]
+        },
+        {
+            "id": 222712,
+            "name": "Олимпия 52",
+            "alternativeName": "Olympia 52",
+            "enName": "",
+            "type": "movie",
+            "year": 1952,
+            "description": "",
+            "shortDescription": "",
+            "movieLength": 82,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [],
+            "externalId": {
+                "kpHD": null,
+                "imdb": "tt0044992",
+                "tmdb": 186766
+            },
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": null,
+                "previewUrl": null
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 0,
+                "imdb": 6.9,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "votes": {
+                "kp": 6,
+                "imdb": 39,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Франция"
+                }
+            ],
+            "releaseYears": []
+        },
+        {
+            "id": 402283,
+            "name": "Олимпия – Олимпия",
+            "alternativeName": "Olympia - Olympia",
+            "enName": "",
+            "type": "movie",
+            "year": 1971,
+            "description": "",
+            "shortDescription": "",
+            "movieLength": 105,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [
+                {
+                    "name": "Олимпия — Олимпия"
+                },
+                {
+                    "name": "Olympia - Olympia"
+                }
+            ],
+            "externalId": {
+                "kpHD": null,
+                "imdb": "tt1158303",
+                "tmdb": 288256
+            },
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": null,
+                "previewUrl": null
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 0,
+                "imdb": 5.7,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "votes": {
+                "kp": 4,
+                "imdb": 15,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "комедия"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Германия (ФРГ)"
+                }
+            ],
+            "releaseYears": []
+        },
+        {
+            "id": 251557,
+            "name": "Олимпия — Олимпия",
+            "alternativeName": "Olympia - Olympia",
+            "enName": "",
+            "type": "movie",
+            "year": 1972,
+            "description": "",
+            "shortDescription": "",
+            "movieLength": 96,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [
+                {
+                    "name": "Олимпия — Олимпия"
+                },
+                {
+                    "name": "Olympia - Olympia"
+                }
+            ],
+            "externalId": {
+                "kpHD": null,
+                "imdb": "tt0223833",
+                "tmdb": 265325
+            },
+            "logo": {
+                "url": null,
+                "previewUrl": null
+            },
+            "poster": {
+                "url": null,
+                "previewUrl": null
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 0,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "votes": {
+                "kp": 1,
+                "imdb": 0,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Германия (ФРГ)"
+                }
+            ],
+            "releaseYears": []
+        },
+        {
+            "id": 805153,
+            "name": "Мистер Олимпия",
+            "alternativeName": "Bigger",
+            "enName": "",
+            "type": "movie",
+            "year": 2018,
+            "description": "Братья Джо и Бен Уайдеры — профессиональные тренеры, всю жизнь занимавшиеся популяризацией бодибилдинга. В 1946 году они основали Международную федерацию бодибилдинга, которая впоследствии выросла в мощную и влиятельную организацию. Именно они обнаружили в Австрии молодого Арнольда Шварценеггера и уговорили его переехать в США. Фильм расскажет, как строилась империя Уайдеров и скольким им пришлось пожертвовать, чтобы пробиться наверх.",
+            "shortDescription": "Как зародился бодибилдинг в США. Драматическая история братьев Уайдер, открывающих миру Арнольда Шварценеггера",
+            "movieLength": 107,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": "pg13",
+            "ageRating": 12,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [],
+            "externalId": {
+                "imdb": "tt3226786",
+                "tmdb": 481370,
+                "kpHD": "491971e6b2febfc497df04892479cec7"
+            },
+            "logo": {
+                "url": "https://image.openmoviedb.com/tmdb-images/original/dzntFslhPzkBiDnzvdERv6V60pn.png",
+                "previewUrl": "https://image.openmoviedb.com/tmdb-images/w500/dzntFslhPzkBiDnzvdERv6V60pn.png"
+            },
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/1600647/244900c4-91de-4129-9c2f-8cbe9972cb30/600x900",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/1600647/244900c4-91de-4129-9c2f-8cbe9972cb30/300x450"
+            },
+            "backdrop": {
+                "url": "https://image.openmoviedb.com/kinopoisk-ott-images/2419418/2a0000016dbac9db58eeacda3f1180cda9d5/1344x756",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-ott-images/2419418/2a0000016dbac9db58eeacda3f1180cda9d5/678x380"
+            },
+            "rating": {
+                "kp": 7.169,
+                "imdb": 6.4,
+                "filmCritics": 4.3,
+                "russianFilmCritics": 0,
+                "await": null
+            },
+            "votes": {
+                "kp": 20407,
+                "imdb": 3200,
+                "filmCritics": 9,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "драма"
+                },
+                {
+                    "name": "биография"
+                },
+                {
+                    "name": "спорт"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "США"
+                }
+            ],
+            "releaseYears": []
+        },
+        {
+            "id": 8440311,
+            "name": "Клан Олимпия",
+            "alternativeName": "El clan Olimpia",
+            "enName": "",
+            "type": "tv-series",
+            "year": 2025,
+            "description": "Чтобы прокормить семью, женщина начинает продавать гашиш на площади, и впоследствии становится крупным международным наркоторговцем.",
+            "shortDescription": "",
+            "movieLength": 0,
+            "isSeries": true,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 2,
+            "status": "completed",
+            "names": [],
+            "externalId": null,
+            "logo": null,
+            "poster": {
+                "url": "https://image.openmoviedb.com/kinopoisk-images/10809116/abc9dd6e-e5f7-4b14-8391-a3885eda07fb/600x900",
+                "previewUrl": "https://image.openmoviedb.com/kinopoisk-images/10809116/abc9dd6e-e5f7-4b14-8391-a3885eda07fb/300x450"
+            },
+            "backdrop": null,
+            "rating": {
+                "kp": 0,
+                "imdb": 6.4,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "votes": {
+                "kp": 219,
+                "imdb": 69,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "триллер"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "Испания"
+                }
+            ],
+            "releaseYears": [
+                {
+                    "start": 2025,
+                    "end": 2025
+                }
+            ]
+        },
+        {
+            "id": 317058,
+            "name": "Битва «Олимпия»",
+            "alternativeName": "Battle Olympia",
+            "enName": "",
+            "type": "movie",
+            "year": 2007,
+            "description": "",
+            "shortDescription": "",
+            "movieLength": 0,
+            "isSeries": false,
+            "ticketsOnSale": false,
+            "totalSeriesLength": null,
+            "seriesLength": null,
+            "ratingMpaa": null,
+            "ageRating": null,
+            "top10": null,
+            "top250": null,
+            "typeNumber": 1,
+            "status": null,
+            "names": [],
+            "externalId": {
+                "kpHD": null,
+                "imdb": "tt1029265"
+            },
+            "logo": {
+                "url": null
+            },
+            "poster": {
+                "url": null,
+                "previewUrl": null
+            },
+            "backdrop": {
+                "url": null,
+                "previewUrl": null
+            },
+            "rating": {
+                "kp": 0,
+                "imdb": 9.8,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "votes": {
+                "kp": 12,
+                "imdb": 10,
+                "filmCritics": 0,
+                "russianFilmCritics": 0,
+                "await": 0
+            },
+            "genres": [
+                {
+                    "name": "короткометражка"
+                },
+                {
+                    "name": "боевик"
+                },
+                {
+                    "name": "спорт"
+                }
+            ],
+            "countries": [
+                {
+                    "name": "США"
+                }
+            ],
+            "releaseYears": []
+        }
+    ],
+    "total": 53,
+    "limit": 10,
+    "page": 1,
+    "pages": 6
+}
