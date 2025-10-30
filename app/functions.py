@@ -206,7 +206,15 @@ def get_recommender_video_for_kinopoisk(
     url += f"&type={type_video}"
     url += f"&rating.kp={rating}"
 
-    array_recommender = requests.get(url=url, headers=HEADERS).json().get("docs")
+    array_recommender = (
+        requests.get(
+            url=url,
+            headers=HEADERS,
+            timeout=15,
+        )
+        .json()
+        .get("docs")
+    )
     random.shuffle(array_recommender)
 
     return array_recommender[:limit]
