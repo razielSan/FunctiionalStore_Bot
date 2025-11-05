@@ -42,29 +42,6 @@ class ImageGeneration(BaseModel):
     neuroimg: NeuroimgImageGeneration = NeuroimgImageGeneration()
 
 
-# Модели для генераци описаний изображений
-
-
-class ImaggaImageDescription(BaseModel):
-    """Модель сайта https://imagga.com/."""
-
-    AUTHORIZATION: Optional[str] = None  # Токен аторизации
-    UPLOAD_ENDPOINT: str = "https://api.imagga.com/v2/uploads"  # URL для получения uplooad_image_id картинки
-    URL_TAGS: str = "https://api.imagga.com/v2/tags"  # URL для описание изображения
-
-
-class ImageDescription(BaseModel):
-    """Модели для описания изображений."""
-
-    immaga: ImaggaImageDescription = ImaggaImageDescription()
-    PATH_TO_IMAGE_DESCRIPTON: Path = (
-        path_settings.APP_DIR
-        / "static"
-        / "img"
-        / "image_description"  # путь до папки с картинками описаний изображений
-    )
-
-
 # Модели для поиска видео
 
 
@@ -215,9 +192,7 @@ class LoggingSettings(BaseModel):
         "[%(asctime)s] - %(module)s:%(lineno)s - [%(levelname)s - %(message)s]"
     )
     DATE_FORMAT: str = "%Y-%m-%d %H:%M:%S"
-    ERROR_WEB_RESPONSE_MESSAGE: str = (
-        "[{method}] {status} {url} -> {error_message}"  # Формат сообщения для ошибки в запросах.
-    )
+    ERROR_WEB_RESPONSE_MESSAGE: str = "[{method}] {status} {url} -> {error_message}"  # Формат сообщения для ошибки в запросах.
     # method, status, url, error_message
 
 
@@ -404,7 +379,6 @@ class Settings(BaseSettings):
 
     find_image: FindImage = FindImage()
     modelimage: ImageGeneration = ImageGeneration()
-    image_description: ImageDescription = ImageDescription()
     find_video: FindVideo = FindVideo()
     proxies: Proxies = Proxies()
     ip_info: IpInfo = IpInfo()
