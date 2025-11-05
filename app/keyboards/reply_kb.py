@@ -8,7 +8,6 @@ def get_start_button_bot() -> ReplyKeyboardMarkup:
         keyboard=[
             [
                 KeyboardButton(text="Прогноз Погоды"),
-                KeyboardButton(text="Описание Изображений"),
             ],
             [
                 KeyboardButton(text="Поиск Изображений"),
