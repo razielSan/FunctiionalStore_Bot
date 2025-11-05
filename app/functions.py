@@ -356,11 +356,10 @@ def create_video_by_is_vheer(
         # Если есть URL для сайта с описанием изображения заходим в него
         if description_url:
             driver.get(description_url)
-            print(1)
             prompt: str = get_prompt_for_image(
                 driver=driver, image_path=image_path
             ).get("message")
-            print(2)
+
 
         driver.get(url=url)
 
