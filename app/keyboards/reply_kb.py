@@ -15,7 +15,6 @@ def get_start_button_bot() -> ReplyKeyboardMarkup:
             ],
             [
                 KeyboardButton(text="Генерация Изображений"),
-                KeyboardButton(text="Генерация Видео"),
             ],
             [
                 KeyboardButton(text="Информация по ip"),

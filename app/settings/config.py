@@ -142,42 +142,6 @@ class PasswordGeneration(BaseModel):
     digit: str = "0123456789"
 
 
-# Модели для генерации видео
-
-
-class VheerVideoGeneration(BaseModel):
-    """Модель генерации изображений для сайта https://vheer.com/."""
-
-    TOTAL_STEP: int = (
-        10  # Общее количество шагов для отслеживания прогресс загрузки видео
-    )
-    CALLBACK_INLINE_BUTTON: str = "vheer"  # callback запись в инлайн клавиатуре
-    VIDEO_URL: str = "https://vheer.com/app/image-to-video"
-    PROMPT_IMG_URL: str = (
-        "https://products.aspose.ai/pdf/ru/image-description"  # URL для сайта по
-    )
-    # генерации описание по фаото
-
-    VIDEO_DATA: str = """
-        const video = arguments[0];
-        const done = arguments[1];
-        fetch(video.src)
-            .then(r => r.blob())
-            .then(blob => {
-            const reader = new FileReader();
-            reader.onload = () => done(reader.result);
-            reader.readAsDataURL(blob);
-            })
-            .catch(err => done('ERROR:' + err.message));
-        """  # JavaScripts для загрузки видео
-
-
-class VideoGeneration(BaseModel):
-    """Модель для генерации видео."""
-
-    vheer: VheerVideoGeneration = VheerVideoGeneration()
-
-
 # Модель для логирования
 class LoggingSettings(BaseModel):
     """Модель для логгирования."""
@@ -384,7 +348,6 @@ class Settings(BaseSettings):
     ip_info: IpInfo = IpInfo()
     recommender_system: RecommenderSystem = RecommenderSystem()
     password_generation: PasswordGeneration = PasswordGeneration()
-    video_generation: VideoGeneration = VideoGeneration()
     logging: LoggingSettings = LoggingSettings()
 
 

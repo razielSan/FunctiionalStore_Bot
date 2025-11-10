@@ -13,7 +13,6 @@ from views.user_info import router as user_info_router
 from views.get_proxies import router as proxies_router
 from views.recommender_system import router as recommender_system_router
 from views.generate_password import router as generate_password_router
-from views.generate_video import router as generate_video_router
 
 
 async def on_startup():
@@ -29,7 +28,6 @@ async def main():
     await bot.delete_webhook(drop_pending_updates=True)
 
     dp.startup.register(on_startup)
-    dp.include_router(generate_video_router)
     dp.include_router(generate_password_router)
     dp.include_router(recommender_system_router)
     dp.include_router(proxies_router)
