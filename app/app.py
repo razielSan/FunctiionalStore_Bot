@@ -7,7 +7,6 @@ from logging_handler.main import rout_logging
 from views.main import router as main_router
 from views.weather_forecast import router as weather_forecast_router
 from views.find_image import router as find_image_router
-from views.generate_image import router as generate_image_router
 from views.find_video import router as find_video_router
 from views.user_info import router as user_info_router
 from views.get_proxies import router as proxies_router
@@ -32,7 +31,6 @@ async def main():
     dp.include_router(recommender_system_router)
     dp.include_router(proxies_router)
     dp.include_router(find_video_router)
-    dp.include_router(generate_image_router)
     dp.include_router(find_image_router)
     dp.include_router(weather_forecast_router)
     dp.include_router(user_info_router)

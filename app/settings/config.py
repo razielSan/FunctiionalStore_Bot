@@ -9,39 +9,6 @@ from pydantic import BaseModel
 from settings import path_settings
 
 
-# Модели для генерации изображений
-
-
-class PollinationsImageGeneration(BaseModel):
-    """Модель сайта https://pollinations.ai/."""
-
-    IMAGE_GENERATE: str = (
-        "https://image.pollinations.ai/prompt/{}"  # URL для генерации изображений
-    )
-
-
-class CailaIoImageGeneration(BaseModel):
-    """Модель сайта https://caila.io/."""
-
-    ApiKey: Optional[str] = None
-    URL_IMAGE_GENERATE: str = "https://caila.io/api/adapters/openai/images/generations"
-
-
-class NeuroimgImageGeneration(BaseModel):
-    """Модель сайта https://neuroimg.art/."""
-
-    ApiKey: Optional[str] = None
-    URL_IMAGE_GENERATE: str = "https://neuroimg.art/api/v1/free-generate"
-
-
-class ImageGeneration(BaseModel):
-    """Модели для генерации изображений по описанию."""
-
-    pollinations: PollinationsImageGeneration = PollinationsImageGeneration()
-    caila: CailaIoImageGeneration = CailaIoImageGeneration()
-    neuroimg: NeuroimgImageGeneration = NeuroimgImageGeneration()
-
-
 # Модели для поиска видео
 
 
@@ -342,7 +309,6 @@ class Settings(BaseSettings):
     )
 
     find_image: FindImage = FindImage()
-    modelimage: ImageGeneration = ImageGeneration()
     find_video: FindVideo = FindVideo()
     proxies: Proxies = Proxies()
     ip_info: IpInfo = IpInfo()

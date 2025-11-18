@@ -56,46 +56,6 @@ def get_button_is_weathre_forecast():
     return inline_kb
 
 
-def get_button_generate_image():
-    """Возвращает инлайн кнопки выбора генераторов изображений."""
-
-    inline_kb = InlineKeyboardMarkup(
-        inline_keyboard=[
-            [
-                InlineKeyboardButton(
-                    text="pollinations.ai", callback_data="generate_image pollinations"
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    text="caila.io", callback_data="generate_image caila"
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    text="neuroimg.art", callback_data="generate_image neuroimg"
-                ),
-            ],
-        ],
-        resize_keyboard=True,
-    )
-    return inline_kb
-
-
-def get_button_image_description():
-    """Возвращает инлайн кнопки выбора генераторов описаний изображений."""
-
-    inline_kb = InlineKeyboardMarkup(
-        inline_keyboard=[
-            [
-                InlineKeyboardButton(text="imagga.com", callback_data="immaga"),
-            ],
-        ],
-        resize_keyboard=True,
-    )
-    return inline_kb
-
-
 def get_button_find_video():
     """Возвращает инлайн кнопки выбора вариантов поиска видео."""
 
@@ -192,25 +152,6 @@ def get_button_choice_sorted_youtube_video():
     return inline_kb
 
 
-def get_button_model_video_generate_by_caila():
-    """Возвращает инлайн кнопки выбора модели для сайта cайта https://caila.io/."""
-
-    inline_kb = InlineKeyboardMarkup(
-        inline_keyboard=[
-            [
-                InlineKeyboardButton(
-                    text="gpt-image-1", callback_data="gv gpt-image-1"
-                ),
-            ],
-            [
-                InlineKeyboardButton(text="dall-e-3", callback_data="gv dall-e-3"),
-            ],
-        ],
-        resize_keyboard=True,
-    )
-    return inline_kb
-
-
 def get_button_recommender_system():
     """Возвращает инлайн кнопки выбора рекомендательной системы."""
 
@@ -296,48 +237,6 @@ def get_buttons_for_generating_passwords():
         InlineKeyboardButton(
             text="Сложный",
             callback_data=f"password {settings.password_generation.difficult}",
-        )
-    )
-
-    return inline_kb.as_markup(resize_markup=True)
-
-
-def get_buttons_for_generating_video():
-    """Возвращает инлайн кнопки для генерации видео.
-
-    Returns:
-        _type_: Возвращает инлайн кнопки для генерации видео
-    """
-
-    inline_kb = InlineKeyboardBuilder()
-    inline_kb.row(
-        InlineKeyboardButton(
-            text=f"{settings.video_generation.vheer.CALLBACK_INLINE_BUTTON}",
-            callback_data=f"genvideo {settings.video_generation.vheer.CALLBACK_INLINE_BUTTON}",
-        )
-    )
-
-    return inline_kb.as_markup(resize_markup=True)
-
-
-def get_buttons_for_generating_video_for_vheer():
-    """Возвращает инлайн кнопки генерации видео для сайт vheer.
-
-    Returns:
-        _type_: Возвращает инлайн кнопки для генерации видео
-    """
-
-    inline_kb = InlineKeyboardBuilder()
-    inline_kb.row(
-        InlineKeyboardButton(
-            text="По изображению и описанию",
-            callback_data=f"{settings.video_generation.vheer.CALLBACK_INLINE_BUTTON} desc",
-        )
-    )
-    inline_kb.row(
-        InlineKeyboardButton(
-            text="По изображению",
-            callback_data=f"{settings.video_generation.vheer.CALLBACK_INLINE_BUTTON} img",
         )
     )
 

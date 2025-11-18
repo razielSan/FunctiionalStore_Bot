@@ -70,7 +70,6 @@ async def error_handler_for_the_website(
             data=data,
             headers=headers,
         ) as resp:
-            print(resp.status)
             if resp.status in [403, 404]:
 
                 # Для удобного логгирования
@@ -110,7 +109,6 @@ async def error_handler_for_the_website(
                 )
 
             elif resp.status != 200:
-                print(4444444444444444)
                 # Для удобного логгирования
                 url: str = str(resp.url)
                 error_body = await safe_read_response(resp=resp)
@@ -131,7 +129,6 @@ async def error_handler_for_the_website(
                     method=method,
                 )
             if data_type.upper() == "JSON":
-                print(55555555555)
                 message_body = await resp.json()
                 return ResponseData(
                     message=message_body,

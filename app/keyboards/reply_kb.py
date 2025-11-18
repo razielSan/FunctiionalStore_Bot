@@ -14,16 +14,13 @@ def get_start_button_bot() -> ReplyKeyboardMarkup:
                 KeyboardButton(text="Поиск Видео"),
             ],
             [
-                KeyboardButton(text="Генерация Изображений"),
-            ],
-            [
                 KeyboardButton(text="Информация по ip"),
                 KeyboardButton(text="Получить список прокси"),
             ],
             [
                 KeyboardButton(text="Рекомендательная система"),
-                KeyboardButton(text="Генерация паролей")
-            ]
+                KeyboardButton(text="Генерация паролей"),
+            ],
         ],
         resize_keyboard=True,
     )
