@@ -7,6 +7,7 @@ def get_start_button_bot() -> ReplyKeyboardMarkup:
     reply_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(
         keyboard=[
             [
+                KeyboardButton(text="Генерация паролей"),
                 KeyboardButton(text="Прогноз Погоды"),
             ],
             [
@@ -16,10 +17,6 @@ def get_start_button_bot() -> ReplyKeyboardMarkup:
             [
                 KeyboardButton(text="Информация по ip"),
                 KeyboardButton(text="Получить список прокси"),
-            ],
-            [
-                KeyboardButton(text="Рекомендательная система"),
-                KeyboardButton(text="Генерация паролей"),
             ],
         ],
         resize_keyboard=True,
